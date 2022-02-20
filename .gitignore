@@ -2,4 +2,5 @@ python/redddit/
 *.txt
 *.png
 python/page.json
-list.json
+python/page.html
+python/page.xml
