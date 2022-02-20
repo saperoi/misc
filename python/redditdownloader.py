@@ -28,6 +28,7 @@ def getImg(url: str):
             keys = keys.replace("]", "")
             keys = keys.replace("'", "")
             keys = keys.replace(" ", "")
+            keys = keys.replace("Prolangs ", "")
             keys = keys.split(",")
             for i in range(len(keys)):
                 name = yassy[0]['data']['children'][0]['data']['title'] + " #" + str(i+1)
@@ -49,7 +50,8 @@ def dlIMG(url, name):
     name = name.replace(".", "")
     name = name.replace(",", "")
     name = name.replace('"', "")
-    print(name)
+    name = name.replace("amp;", "")
+    #print(name)
     img = open('./redddit/' + str(name) + '.png', 'wb')
     img.write(r.content)
     img.close()
