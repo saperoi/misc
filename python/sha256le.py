@@ -44,19 +44,16 @@ def sha256le():
         if verdict == "":
             print("You won! The Sha256le word was: " + secret)
             flag = True
+        i += 1
     if flag == False:
         print("You lost! The Sha256le word was: " + secret)
     choice = input("Want to play again? y/n")
     if choice == "y":
         sha256le()
-    if choice == "n":
+    elif choice == "Y":
+        sha256le()
+    else:
         quit
-    while choice != "y" or "n":
-        choice = input("Want to play again? y/n")
-        if choice == "y":
-            sha256le()
-        if choice == "n":
-            quit
             
 print("                                                                                           ")
 print("           88                        ad888888b,  8888888888     ad8888ba,  88              ")
@@ -70,4 +67,5 @@ print("`\"YbbdP\"'  88       88  `\"8bbdP\"Y8  88888888888   \"Y88888P\"    \"Y8
 print("                                                                                           ")
 print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
 print("Also, there isn't any consideration yet for duplicate letters yet.")
+print("Also also, capitals don't matter.")
 sha256le()
