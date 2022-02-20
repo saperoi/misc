@@ -2,3 +2,4 @@ python/redddit/
 *.txt
 *.png
 python/page.json
+list.json

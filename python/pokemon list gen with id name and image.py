@@ -25,14 +25,14 @@ while id <= 905:
 		name = yassyn[str(id)]["name"]
 	except:
 		name = "???"
+	link = "https://serebii.net/art/th/" + str(id) + ".png"
 	if len(str(id)) == 1:
 		id = "00" + str(id)
 	if len(str(id)) == 2:
 		id = "0" + str(id)
-	link = "https://serebii.net/art/th/" + str(id) + ".png"
 	res.write("\t\"" + str(int(id)) + "\": {\n")
-	res.write("\t\t\"name\": \"" + name  + "\"\n")
-	res.write("\t\t\"id\": \"" + str(id) + "\"\n")
+	res.write("\t\t\"name\": \"" + name  + "\",\n")
+	res.write("\t\t\"id\": \"" + str(id) + "\",\n")
 	res.write("\t\t\"url\": \"" + link + "\"\n")
 	if str(id) == "905":
 		res.write("\t}\n")
