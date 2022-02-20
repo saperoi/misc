@@ -15,7 +15,7 @@ def getImg(url: str):
     yassyr = open('page.json')
     yassy = json.loads(yassyr.read())
     yassyr.close()
-    #os.remove('page.json')
+    os.remove('page.json')
     
     try:
         if yassy[0]['data']['children'][0]['data']['is_gallery'] == True:
