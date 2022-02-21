@@ -94,17 +94,17 @@ def roots():
     while(True):
         print("Score: " + str(s))
         a = random.randint(0, 10)
-        b = random.randint(0, 5)
+        b = random.randint(1, 5)
         c = a ** b
-        print("What is " + str(b) + "th root of " + str(a) + "? ")
+        print("What is " + str(b) + "th root of " + str(c) + "? ")
         print()
         d = input()
         print()
-        if(str(c) == abs(str(d))):
+        if(int(a) == abs(int(d))):
             s += 1
             print("Correct")
         else:
-            print("False, the correct answer was: " + str(c))
+            print("False, the correct answer was: " + str(a))
             if s > 0:
                 s -= 1
         print('You took ' + str(round((time.time() - lasttime), 2)) + ' seconds.')
