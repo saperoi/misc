@@ -25,7 +25,6 @@ def sha256le():
     starttime = time.time()
     lasttime = starttime
     secret, secrethash, hashlist = secretW()
-
     i = 1
     while i <= maxguesses:
         word = input()
@@ -47,7 +46,6 @@ def sha256le():
                 word = input()
             else:
                 flag0 = True
-
         word = word.lower()
         word = list(word)
         scrtcop = secrethash
@@ -71,7 +69,6 @@ def sha256le():
             else:
                 verdictl[j] = "-"
                 scrtlistcop[j] = ""
-
         for c in range(64):
             verdict += verdictl[c]
         print(verdict)
