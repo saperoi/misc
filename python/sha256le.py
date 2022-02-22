@@ -1,9 +1,13 @@
 from hashlib import sha256
 import random
 import os
+from pyparsing import java_style_comment
 import requests
+import time
 
 alphalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+
+maxguesses = 3
 
 def secretW():
     r = requests.get(alphalink)
@@ -18,9 +22,12 @@ def secretW():
     return secret, secrethash, list(secrethash)
 
 def sha256le():
+    starttime = time.time()
+    lasttime = starttime
     secret, secrethash, hashlist = secretW()
+
     i = 1
-    while i <= 17:
+    while i <= maxguesses:
         word = input()
         while len(word) != 64:
             if len(word) > 64:
@@ -29,24 +36,54 @@ def sha256le():
             if len(word) < 64:
                 print("Hash is too short, please try again")
                 word = input()
+        flag0 = True
+        while flag0 == True:
+            flag01 = True
+            for p in range(len(word)):
+                if word[p] not in "azertyuiopqsdfghjklmwxcvbn1234567890":
+                    flag01 = False
+            if flag01 == False:
+                print("Hash contains invalid characters, please try again")
+                word = input()
+            else:
+                flag0 = True
+
         word = word.lower()
         word = list(word)
+        scrtcop = secrethash
+        scrtlistcop = hashlist
+        verdictl = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
         verdict = ""
-        flag = False
-        for j in range(64):
-            if word[j] == hashlist[j]:
-                verdict += "G"
-            elif word[j] in secrethash:
-                verdict += "y"
+        for j in range(len(secrethash)):
+            if word[j] in scrtcop:
+                if word[j] == scrtlistcop[j]:
+                    verdictl[j] = "G"
+                    scrtlistcop[j] = ""
+                else:
+                    flag2 = False
+                    k = 0
+                    while k < len(secrethash) and flag2 == False:
+                        if word[j] == scrtlistcop[k]:
+                            verdictl[j] = "y"
+                            scrtlistcop[k] = ""
+                            flag2 = True
+                        k += 1
             else:
-                   verdict += "-"
+                verdictl[j] = "-"
+                scrtlistcop[j] = ""
+
+        for c in range(64):
+            verdict += verdictl[c]
         print(verdict)
-        if verdict == "":
+        flag = False
+        if verdict == "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG":
             print("You won! The Sha256le word was: " + secret)
+            print("You guessed it in " + str(i) + " guesses, and took " + str(round((time.time() - lasttime), 2)) + " seconds.")
             flag = True
         i += 1
     if flag == False:
         print("You lost! The Sha256le word was: " + secret)
+    print("The hash was: " + secrethash)
     choice = input("Want to play again? y/n")
     if choice == "y":
         sha256le()
