@@ -1,5 +1,6 @@
 python/redddit/
 *.txt
+!src_files/*
 *.png
 python/page.json
 python/page.html

@@ -18,7 +18,6 @@ def secretW():
     secret = random.choice(alpha.readlines())
     secrethash = sha256(secret.encode('utf-8')).hexdigest()
     alpha.close()
-    os.remove("w.txt")
     return secret, secrethash, list(secrethash)
 
 def sha256le():
@@ -39,13 +38,13 @@ def sha256le():
         while flag0 == True:
             flag01 = True
             for p in range(len(word)):
-                if word[p] not in "azertyuiopqsdfghjklmwxcvbn1234567890":
+                if word[p] not in "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890":
                     flag01 = False
             if flag01 == False:
                 print("Hash contains invalid characters, please try again")
                 word = input()
             else:
-                flag0 = True
+                break
         word = word.lower()
         word = list(word)
         scrtcop = secrethash
@@ -53,22 +52,21 @@ def sha256le():
         verdictl = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
         verdict = ""
         for j in range(len(secrethash)):
-            if word[j] in scrtcop:
-                if word[j] == scrtlistcop[j]:
-                    verdictl[j] = "G"
-                    scrtlistcop[j] = ""
-                else:
-                    flag2 = False
-                    k = 0
-                    while k < len(secrethash) and flag2 == False:
-                        if word[j] == scrtlistcop[k]:
-                            verdictl[j] = "y"
-                            scrtlistcop[k] = ""
-                            flag2 = True
-                        k += 1
+            if word[j] == scrtlistcop[j]:
+                verdictl[j] = "G"
+                scrtlistcop[j] = "-"
+            elif word[j] in scrtcop:
+                flag2 = False
+                for k in range(len(secrethash)):
+                    if flag2 == True:
+                        continue
+                    if word[j] == scrtlistcop[k]:
+                        verdictl[j] = "y"
+                        scrtlistcop[k] = "-"
+                        flag2 = True
+                    k += 1
             else:
                 verdictl[j] = "-"
-                scrtlistcop[j] = ""
         for c in range(64):
             verdict += verdictl[c]
         print(verdict)
