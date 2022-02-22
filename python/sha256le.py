@@ -1,13 +1,25 @@
 from hashlib import sha256
 import random
 import os
-from pyparsing import java_style_comment
 import requests
 import time
+from colorama import init, Fore, Style
 
-alphalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/basicdictionary.txt"
+maxguesses = 17
 
-maxguesses = 3
+init()
+FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
+
+def freqtest(input_string):
+    frequencies = {} 
+  
+    for char in input_string: 
+        if char in frequencies: 
+            frequencies[char] += 1
+        else: 
+            frequencies[char] = 1
+    print(frequencies)
 
 def secretW():
     r = requests.get(alphalink)
@@ -18,12 +30,19 @@ def secretW():
     secret = random.choice(alpha.readlines())
     secrethash = sha256(secret.encode('utf-8')).hexdigest()
     alpha.close()
-    return secret, secrethash, list(secrethash)
+    return secret, secrethash
+
+def copyfix(aw):
+    av = ""
+    for z in range(len(aw)):
+        av += aw[z]
+    aw = list(av)
+    return av, aw
 
 def sha256le():
     starttime = time.time()
     lasttime = starttime
-    secret, secrethash, hashlist = secretW()
+    secret, secrethash = secretW()
     i = 1
     while i <= maxguesses:
         word = input()
@@ -48,43 +67,46 @@ def sha256le():
         word = word.lower()
         word = list(word)
         scrtcop = secrethash
-        scrtlistcop = hashlist
+        scrtlistcop = list(scrtcop)
         verdictl = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+        greens = [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
         verdict = ""
         for j in range(len(secrethash)):
             if word[j] == scrtlistcop[j]:
-                verdictl[j] = "G"
+                verdictl[j] = FORES[2] + "G" + Style.RESET_ALL
                 scrtlistcop[j] = "-"
+                greens[j] = True
+        print(verdictl)
+        for j in range(len(secrethash)):
+            if greens[j] == True:
+                continue
             elif word[j] in scrtcop:
-                flag2 = False
                 for k in range(len(secrethash)):
-                    if flag2 == True:
-                        continue
                     if word[j] == scrtlistcop[k]:
-                        verdictl[j] = "y"
+                        verdictl[j] = FORES[1] + "y" + Style.RESET_ALL
                         scrtlistcop[k] = "-"
-                        flag2 = True
-                    k += 1
-            else:
-                verdictl[j] = "-"
-        for c in range(64):
+                        scrtcop, scrtlistcop = copyfix(scrtlistcop)
+        print(verdictl)
+        for j in range(len(secrethash)):
+            if verdictl[j] == "":
+                verdictl[j] = FORES[0] + "-" + Style.RESET_ALL
+        for c in range(len(scrtcop)):
             verdict += verdictl[c]
         print(verdict)
         flag = False
         if verdict == "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG":
-            print("You won! The Sha256le word was: " + secret)
-            print("You guessed it in " + str(i) + " guesses, and took " + str(round((time.time() - lasttime), 2)) + " seconds.")
+            print("You won! The Sha256le word was: " + secret + "You guessed it in " + str(i) + " guesses, and took " + str(round((time.time() - lasttime), 2)) + " seconds.")
             flag = True
         i += 1
     if flag == False:
-        print("You lost! The Sha256le word was: " + secret)
-    print("The hash was: " + secrethash)
+        print("You lost! The Sha256le word was: " + secret + "The hash was: " + secrethash)
     choice = input("Want to play again? y/n")
     if choice == "y":
         sha256le()
     elif choice == "Y":
         sha256le()
     else:
+        os.remove("w.txt")
         quit
             
 print("                                                                                           ")
@@ -101,3 +123,5 @@ print("Please enter your first hash. y = incorrect spot, G = correct spot, - = n
 print("Also, there isn't any consideration yet for duplicate letters yet.")
 print("Also also, capitals don't matter.")
 sha256le()
+
+#azertyuiopqsdfghjklmwxcvbnazertyuiopqsdfghjklmwxcvbn1234567890ab
