@@ -1,5 +1,3 @@
-
-
 class Sekse:
     class gender:
         self = []
@@ -20,7 +18,7 @@ class Sekse:
         masc = ""
         fem = ""
         andro = ""
-        xenic = ""q
+        xenic = ""
     class romantic:
         self = []
         masc = ""
