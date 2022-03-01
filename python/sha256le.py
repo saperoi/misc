@@ -5,7 +5,7 @@ import requests
 import time
 from colorama import init, Fore, Style
 
-alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/basicdictionary.txt"
+alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
 maxguesses = 17
 
 init()
