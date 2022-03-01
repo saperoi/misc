@@ -5,8 +5,34 @@ import requests
 import time
 from colorama import init, Fore, Style
 
-alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
+alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic256.txt"
+betalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/giant256.txt"
 maxguesses = 17
+
+
+r = requests.get(alphalink)
+alphaf = open("a.txt", "wb")
+alphaf.write(r.content)
+alphaf.close()
+alphaf = open("a.txt", "r")
+global alpha
+alpha = alphaf.readlines()
+for i in range(len(alpha)):
+    alpha[i] = alpha[i].replace("\n", "")
+alphaf.close()
+os.remove("a.txt")
+
+r = requests.get(betalink)
+betaf = open("b.txt", "wb")
+betaf.write(r.content)
+betaf.close()
+betaf = open("b.txt", "r")
+global beta
+beta = betaf.readlines()
+for i in range(len(beta)):
+    beta[i] = beta[i].replace("\n", "")
+betaf.close()
+os.remove("b.txt")
 
 init()
 FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
@@ -22,14 +48,9 @@ def freqtest(input_string):
     print(frequencies)
 
 def secretW():
-    r = requests.get(alphalink)
-    alpha = open("w.txt", "wb")
-    alpha.write(r.content)
-    alpha.close()
-    alpha = open("w.txt")
-    secret = random.choice(alpha.readlines())
-    secrethash = sha256(secret.encode('utf-8')).hexdigest()
-    alpha.close()
+    g = random.randint(0, 849)
+    secret = alpha[g]
+    secrethash = beta[g]
     return secret, secrethash
 
 def copyfix(aw):
