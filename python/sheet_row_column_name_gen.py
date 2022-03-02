@@ -5,7 +5,10 @@ global ablist
 abl = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 def save(txt: str):
-	name = str([random.choice('azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890') for _ in range(10)])
+	namea = [random.choice('azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890') for _ in range(10)]
+	name = ""
+	for i in range(len(namea)):
+		name += namea[i]
 	print(name)
 	f = open(name + ".txt", "w")
 	f.write(txt)

@@ -53,7 +53,7 @@ def dlIMG(url, name):
     name = name.replace('"', "")
     name = name.replace("amp;", "")
     #print(name)
-    folder = redddit
+    folder = "redddit"
     if not os.path.exists(folder):
       os.makedirs(folder)
     img = open('./' + folder + '/' + str(name) + '.png', 'wb')

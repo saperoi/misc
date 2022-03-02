@@ -1,8 +1,8 @@
 python/redddit/
+tests/
 *.txt
 *.png
-!src_files/*
-!src_files/*/*
+!src_files/
 python/page.json
 python/page.html
 python/page.xml
