@@ -1,3 +1,3 @@
-filename = "./python/grid_weights.py"
+filename = "./python/gray_image_gen.py"
 while True:
     exec(open(filename).read())
