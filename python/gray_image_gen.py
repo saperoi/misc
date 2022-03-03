@@ -41,5 +41,7 @@ name = ""
 for i in range(len(namea)):
     name += namea[i]
 im.save("./tests/" + name + '.png')
+"""
 im = im.resize(size, resample=Image.NEAREST)
 im.save("./tests/10x/" + name + '.png')
+"""
