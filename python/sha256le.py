@@ -79,12 +79,12 @@ def getGuess():
     word = input()
 
     while flagChar == False or flagLen == False or flagDict == False:
-        if len(word) != 64:
+        if len(word) != len(secrethash):
             flagLen = False
-            if len(word) > 64:
+            if len(word) > len(secrethash):
                 print("Hash is too long, please try again")
                 word = input()
-            if len(word) < 64:
+            if len(word) len(secrethash):
                 print("Hash is too short, please try again")
                 word = input()
         else:
@@ -115,6 +115,7 @@ def getGuess():
 def sha256le():
     starttime = time.time()
     lasttime = starttime
+    global secrethash
     secret, secrethash = secretW()
     i = 1
     while i <= maxguesses:
