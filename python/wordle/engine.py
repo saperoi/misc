@@ -19,10 +19,10 @@ class Wordle():
             if len(word) != len(self.secret):
                 flagLen = False
                 if len(word) > len(self.secret):
-                    print("Hash is too long, please try again")
+                    print("Guess is too long, please try again")
                     word = input()
                 if len(word) < len(self.secret):
-                    print("Hash is too short, please try again")
+                    print("Guess is too short, please try again")
                     word = input()
             else:
                 flagLen = True
@@ -33,7 +33,7 @@ class Wordle():
                     flag01 = False
             if flag01 == False:
                 flagChar = False
-                print("Hash contains invalid characters, please try again")
+                print("Guess contains invalid characters, please try again")
                 word = input()
             else:
                 flagChar = True
@@ -42,7 +42,7 @@ class Wordle():
                 flagDict = True
             else:
                 flagDict = False
-                print("Invalid hash, please try again")
+                print("Invalid guess, please try again")
                 word = input()
 
         return word
@@ -58,7 +58,11 @@ class Wordle():
         lasttime = starttime
         i = 1
         Corr = self.nCopies(len(self.secret), "G")
+        Corr = copyfix(Corr, True)
+        emojis = []
         while i <= self.maxguesses:
+            print("Guess " + str(i) + "/" + str(self.maxguesses))
+            print("--------------")
             word = self.getGuess(epsilon)
             word = word.lower()
             word = list(word)
@@ -93,6 +97,7 @@ class Wordle():
             for c in range(len(scrtcop)):
                 verdict += verdictl[c]
                 verdict2 += verdictl2[c]
+            emojis.append(verdict)
             print(verdict)
             self.vflag = False
             if verdict2 == Corr:
@@ -106,14 +111,15 @@ class Wordle():
         
 
 def secretWord(alpha, n, bool = False):
-    g = random.randint(0, n)
+    g = random.randint(0, n-1)
     secret = alpha[g]
     if bool == False: return secret
-    return secret, g
+    return secret, g+1
 
-def copyfix(aw):
+def copyfix(aw, bool = False):
     av = ""
     for z in range(len(aw)):
         av += aw[z]
     aw = list(av)
+    if bool == True: return av
     return av, aw
