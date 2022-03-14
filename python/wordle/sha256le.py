@@ -5,7 +5,6 @@ import requests
 alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
 betalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic256.txt"
 gammalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/giant256.txt"
-epsilonlink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/256combo.txt"
 maxguesses = 17
 
 r = requests.get(alphalink)
@@ -43,17 +42,6 @@ for i in range(len(gamma)):
 gammaf.close()
 os.remove("g.txt")
 
-r = requests.get(epsilonlink)
-epsilonf = open("g.txt", "wb")
-epsilonf.write(r.content)
-epsilonf.close()
-epsilonf = open("g.txt", "r")
-epsilon = epsilonf.readlines()
-for i in range(len(epsilon)):
-    epsilon[i] = epsilon[i].replace("\n", "")
-epsilonf.close()
-os.remove("e.txt")
-
 print("                                                                                           ")
 print("           88                        ad888888b,  8888888888     ad8888ba,  88              ")
 print("           88                       d8\"     \"88  88            8P'    \"Y8  88              ")
@@ -66,17 +54,18 @@ print("`\"YbbdP\"'  88       88  `\"8bbdP\"Y8  88888888888   \"Y88888P\"    \"Y8
 print("                                                                                           ")
 print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
 
-hidden = w.secretWord(alpha, len(alpha))
-hiddenHash = w.secretWord(beta, len(beta))
-Sha256le = w.Wordle(hidden, 17)
-Sha256le.wordle(epsilon)
+hidden, n = w.secretWord(alpha, len(alpha), True)
+hiddenHash = beta[n]
+#print(hidden)
+#print(hiddenHash)
+Sha256le = w.Wordle(hiddenHash, 17)
+Sha256le.wordle(gamma)
 print("The decoded word was: " + hidden)
 while True:
     choice = input("Want to play again? y/n")
     if choice == "y":
-        Sha256le.wordle(epsilon)
+        Sha256le.wordle(gamma)
     elif choice == "Y":
-        Sha256le.wordle(epsilon)
+        Sha256le.wordle(gamma)
     else:
-        os.remove("w.txt")
         quit

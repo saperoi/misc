@@ -47,14 +47,7 @@ class Wordle():
 
         return word
 
-    def copyfix(aw):
-        av = ""
-        for z in range(len(aw)):
-            av += aw[z]
-        aw = list(av)
-        return av, aw
-
-    def nCopies(n, copy):
+    def nCopies(self, n, copy):
         res = []
         for _ in range(n):
             res.append(copy)
@@ -92,7 +85,7 @@ class Wordle():
                             verdictl[j] = self.FORES[1] + "y" + Style.RESET_ALL
                             verdictl2[j] = "y"
                             scrtlistcop[k] = "-"
-                            scrtcop, scrtlistcop = self.copyfix(scrtlistcop)
+                            scrtcop, scrtlistcop = copyfix(scrtlistcop)
             for j in range(len(self.secret)):
                 if verdictl[j] == "":
                     verdictl[j] = self.FORES[0] + "-" + Style.RESET_ALL
@@ -112,7 +105,15 @@ class Wordle():
             print("You lost :( The word was: " + self.secret)
         
 
-def secretWord(alpha, n):
+def secretWord(alpha, n, bool = False):
     g = random.randint(0, n)
     secret = alpha[g]
-    return secret
+    if bool == False: return secret
+    return secret, g
+
+def copyfix(aw):
+    av = ""
+    for z in range(len(aw)):
+        av += aw[z]
+    aw = list(av)
+    return av, aw
