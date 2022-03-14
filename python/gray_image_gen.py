@@ -4,7 +4,7 @@ import random
 horiz = 8
 vert = 8
 
-methodchoice = "bw"
+methodchoice = "gray"
 
 hc0 = (0, 0, 0)
 hc1 = (255, 255, 255)

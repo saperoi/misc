@@ -84,7 +84,7 @@ def getGuess():
             if len(word) > len(secrethash):
                 print("Hash is too long, please try again")
                 word = input()
-            if len(word) len(secrethash):
+            if len(word) < len(secrethash):
                 print("Hash is too short, please try again")
                 word = input()
         else:
@@ -169,7 +169,6 @@ def sha256le():
     elif choice == "Y":
         sha256le()
     else:
-        os.remove("w.txt")
         quit
             
 print("                                                                                           ")
@@ -183,8 +182,6 @@ print("aa    ]8I  88       88  88,    ,88  d8\"          Y8a     a8P  88a     a8
 print("`\"YbbdP\"'  88       88  `\"8bbdP\"Y8  88888888888   \"Y88888P\"    \"Y88888P\"   88   `\"Ybbd8\"'  ")
 print("                                                                                           ")
 print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
-print("Also, there isn't any consideration yet for duplicate letters yet.")
-print("Also also, capitals don't matter.")
 sha256le()
 
 #azertyuiopqsdfghjklmwxcvbnazertyuiopqsdfghjklmwxcvbn1234567890ab

@@ -14,10 +14,10 @@ yassyn = json.loads(yassyrn.read())
 yassyrn.close()
 os.remove('pkmn.json')
 
-res = open("list.json", "a")
+res = open("src_files/list.json", "a")
 res.write("{\n")
 
-res2 = open("list.txt", "a")
+res2 = open("src_files/list.txt", "a")
 
 while id <= 905:
 	name = ""
