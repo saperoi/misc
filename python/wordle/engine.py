@@ -4,14 +4,15 @@ import time
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden, max, name = "wordle"):
+    def __init__(self, hidden, max, name = "wordle", allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890"):
         init()
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.maxguesses = max
         self.name = name
+        self.allowed = allowed
 
-    def getGuess(self, epsilon, allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890"):
+    def getGuess(self, epsilon):
         flagChar = False
         flagLen = False
         flagDict = False
@@ -31,7 +32,7 @@ class Wordle():
                 
             flag01 = True
             for p in range(len(word)):
-                if word[p] not in allowed:
+                if word[p] not in self.allowed:
                     flag01 = False
             if flag01 == False:
                 flagChar = False
