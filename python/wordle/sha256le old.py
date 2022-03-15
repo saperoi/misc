@@ -18,7 +18,7 @@ alphaf = open("a.txt", "r")
 global alpha
 alpha = alphaf.readlines()
 for i in range(len(alpha)):
-    alpha[i] = alpha[i].replace("\n", "")
+    alpha[i] = alpha[i].replace("\\n", "")
 alphaf.close()
 os.remove("a.txt")
 
@@ -30,7 +30,7 @@ betaf = open("b.txt", "r")
 global beta
 beta = betaf.readlines()
 for i in range(len(beta)):
-    beta[i] = beta[i].replace("\n", "")
+    beta[i] = beta[i].replace("\\n", "")
 betaf.close()
 os.remove("b.txt")
 
@@ -42,7 +42,7 @@ gammaf = open("g.txt", "r")
 global gamma
 gamma = gammaf.readlines()
 for i in range(len(gamma)):
-    gamma[i] = gamma[i].replace("\n", "")
+    gamma[i] = gamma[i].replace("\\n", "")
 gammaf.close()
 os.remove("g.txt")
 
@@ -171,16 +171,14 @@ def sha256le():
     else:
         quit
             
-print("                                                                                           ")
-print("           88                        ad888888b,  8888888888     ad8888ba,  88              ")
-print("           88                       d8\"     \"88  88            8P'    \"Y8  88              ")
-print("           88                               a8P  88  ____     d8           88              ")
-print(",adPPYba,  88,dPPYba,   ,adPPYYba,       ,d8P\"   88a8PPPP8b,  88,dd888bb,  88   ,adPPYba,  ")
-print("I8[    \"\"  88P'    \"8a  \"\"     `Y8     a8P\"      PP\"     `8b  88P'    `8b  88  a8P_____88  ")
-print(" `\"Y8ba,   88       88  ,adPPPPP88   a8P'                 d8  88       d8  88  8PP\"\"\"\"\"\"\"  ")
-print("aa    ]8I  88       88  88,    ,88  d8\"          Y8a     a8P  88a     a8P  88  \"8b,   ,aa ")
-print("`\"YbbdP\"'  88       88  `\"8bbdP\"Y8  88888888888   \"Y88888P\"    \"Y88888P\"   88   `\"Ybbd8\"'  ")
-print("                                                                                           ")
+print("      _           ___  _____   __  _      ")
+print("     | |         |__ \\| ____| / / | |     ")
+print("  ___| |__   __ _   ) | |__  / /_ | | ___ ")
+print(" / __| '_ \\ / _` | / /|___ \\| '_ \\| |/ _ \\")
+print(" \\__ \\ | | | (_| |/ /_ ___) | (_) | |  __/")
+print(" |___/_| |_|\\__,_|____|____/ \\___/|_|\\___|")
+print("                                          ")
+print("                                          ")
 print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
 sha256le()
 

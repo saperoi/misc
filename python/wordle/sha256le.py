@@ -5,6 +5,7 @@ import requests
 alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
 betalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic256.txt"
 gammalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/giant256.txt"
+global maxguesses
 maxguesses = 17
 
 r = requests.get(alphalink)
@@ -42,30 +43,32 @@ for i in range(len(gamma)):
 gammaf.close()
 os.remove("g.txt")
 
-print("                                                                                           ")
-print("           88                        ad888888b,  8888888888     ad8888ba,  88              ")
-print("           88                       d8\"     \"88  88            8P'    \"Y8  88              ")
-print("           88                               a8P  88  ____     d8           88              ")
-print(",adPPYba,  88,dPPYba,   ,adPPYYba,       ,d8P\"   88a8PPPP8b,  88,dd888bb,  88   ,adPPYba,  ")
-print("I8[    \"\"  88P'    \"8a  \"\"     `Y8     a8P\"      PP\"     `8b  88P'    `8b  88  a8P_____88  ")
-print(" `\"Y8ba,   88       88  ,adPPPPP88   a8P'                 d8  88       d8  88  8PP\"\"\"\"\"\"\"  ")
-print("aa    ]8I  88       88  88,    ,88  d8\"          Y8a     a8P  88a     a8P  88  \"8b,   ,aa ")
-print("`\"YbbdP\"'  88       88  `\"8bbdP\"Y8  88888888888   \"Y88888P\"    \"Y88888P\"   88   `\"Ybbd8\"'  ")
-print("                                                                                           ")
+print("      _           ___  _____   __  _      ")
+print("     | |         |__ \\| ____| / / | |     ")
+print("  ___| |__   __ _   ) | |__  / /_ | | ___ ")
+print(" / __| '_ \\ / _` | / /|___ \\| '_ \\| |/ _ \\")
+print(" \\__ \\ | | | (_| |/ /_ ___) | (_) | |  __/")
+print(" |___/_| |_|\\__,_|____|____/ \\___/|_|\\___|")
+print("                                          ")
+print("                                          ")
 print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
 
-hidden, n = w.secretWord(alpha, len(alpha), True)
-hiddenHash = beta[n]
-#print(hidden)
-#print(hiddenHash)
-Sha256le = w.Wordle(hiddenHash, 17)
-Sha256le.wordle(gamma)
-print("The decoded word was: " + hidden)
+def setup():
+    hidden, n = w.secretWord(alpha, len(alpha), True)
+    hiddenHash = beta[n]
+    #print(hidden)
+    #print(hiddenHash)
+    Sha256le = w.Wordle(hiddenHash, maxguesses, "sha256le")
+    Sha256le.wordle(gamma)
+    print("The decoded word was: " + hidden)
+
+setup()
+
 while True:
     choice = input("Want to play again? y/n")
     if choice == "y":
-        Sha256le.wordle(gamma)
+        setup()
     elif choice == "Y":
-        Sha256le.wordle(gamma)
+        setup()
     else:
         quit

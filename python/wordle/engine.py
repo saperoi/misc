@@ -1,13 +1,15 @@
 import random
+from re import A
 import time
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden, max):
+    def __init__(self, hidden, max, name = "wordle"):
         init()
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.maxguesses = max
+        self.name = name
 
     def getGuess(self, epsilon, allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890"):
         flagChar = False
@@ -52,6 +54,25 @@ class Wordle():
         for _ in range(n):
             res.append(copy)
         return res
+
+    def emojify(self, arr):
+        e = []
+        for p in range(len(arr)):
+            g = list(arr[p])
+            w = ""
+            for k in range(len(g)):
+                l = g[k]
+                if l == "-":
+                    w += "⬛"
+                if l == "y":
+                    w += "🟨"
+                if l == "G":
+                    w += "🟩"
+            e.append(w)
+        print(self.name + " " + str(self.guesses) + "/" + str(self.maxguesses))
+        for n in range(len(e)):
+            print(e[n])
+        print("Try for yourself at [ https://github.com/saperoi/misc/tree/main/python/wordle ]")
 
     def wordle(self, epsilon):
         starttime = time.time()
@@ -104,10 +125,14 @@ class Wordle():
                 print("You won! The word was: " + self.secret)
                 print("You guessed it in " + str(i) + " guesses, and took " + str(round((time.time() - lasttime), 2)) + " seconds.")
                 self.vflag = True
+                self.guesses = str(i)
                 i = self.maxguesses
             i += 1
         if self.vflag == False:
             print("You lost :( The word was: " + self.secret)
+            self.guesses = "X"
+        print("Share with your friends!")
+        self.emojify(emojis)
         
 
 def secretWord(alpha, n, bool = False):

@@ -4,7 +4,6 @@ import requests
 
 alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
 gammalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
-maxguesses = 17
 
 r = requests.get(alphalink)
 alphaf = open("a.txt", "wb")
@@ -32,26 +31,31 @@ os.remove("g.txt")
 print("                        _ _      ")
 print("                       | | |     ")
 print(" __      _____  _ __ __| | | ___ ")
-print(" \ \ /\ / / _ \| '__/ _` | |/ _ \\")
-print("  \ V  V / (_) | | | (_| | |  __/")
-print("   \_/\_/ \___/|_|  \__,_|_|\___|")
+print(" \\ \\ /\\ / / _ \\| '__/ _` | |/ _ \\")
+print("  \\ V  V / (_) | | | (_| | |  __/")
+print("   \\_/\\_/ \\___/|_|  \\__,_|_|\\___|")
 print("                                 ")
-print("Please enter your first guess. y = incorrect spot, G = correct spot, - = not in hash")
+print("Please enter your first guess. y = incorrect spot, G = correct spot, - = not in word")
 
-hidden = w.secretWord(alpha, len(alpha), False)
-# maxg = 4 + max(2, (len(hidden)-5))  # 6 if <5, n+1 if >= 5
-# maxg = len(hidden) + 1  # n + 1
-maxg = 1 - max(0, -(len(hidden)+5)) + 6  # x + 1 if <5, 6 if >= 5
+def setup():
+    hidden = w.secretWord(alpha, len(alpha), False)
+    # maxg = 4 + max(2, (len(hidden)-5))  # 6 if <5, n+1 if >= 5
+    # maxg = len(hidden) + 1  # n + 1
+    # maxg = 6 + 1  # 6
+    maxg = 1 - max(0, -(len(hidden)+5)) + 6  # x + 1 if <5, 6 if >= 5
 
-print(len(hidden))
-Sha256le = w.Wordle(hidden, maxg)
-Sha256le.wordle(gamma)
+    print(len(hidden))
+    wordle = w.Wordle(hidden, maxg, "wordle")
+    wordle.wordle(gamma)
+
+setup()
+
 pp = True
 while pp == True:
     choice = input("Want to play again? y/n    ")
     if choice == "y":
-        Sha256le.wordle(gamma)
+        setup()
     elif choice == "Y":
-        Sha256le.wordle(gamma)
+        setup()
     else:
         pp = False
