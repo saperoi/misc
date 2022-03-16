@@ -132,7 +132,7 @@ class Wordle():
         print(self.name + " " + str(self.guesses) + "/" + str(self.maxguesses) + "   " + str(self.timespent) + " s")
         for n in range(len(e)):
             print(e[n])
-        print("Try for yourself at [ https://github.com/saperoi/misc/tree/main/python/wordle ]")
+        print("Try for yourself at <https://github.com/saperoi/misc/tree/main/python/wordle>")
 
 
     def wordle(self, epsilon):
