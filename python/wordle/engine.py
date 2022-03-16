@@ -4,22 +4,25 @@ import time
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden, max, name = "wordle", allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890"):
+    def __init__(self, hidden, max, name = "wordle", allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard = False):
         init()
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.maxguesses = max
         self.name = name
         self.allowed = allowed
+        self.mode = hard
 
     def getGuess(self, epsilon):
         flagChar = False
         flagLen = False
         flagDict = False
+        flagHard = False
         word = input()
 
         while flagChar == False or flagLen == False or flagDict == False:
             if len(word) != len(self.secret):
+                l = list(word)
                 flagLen = False
                 if len(word) > len(self.secret):
                     print("Guess is too long, please try again")
@@ -47,6 +50,30 @@ class Wordle():
                 flagDict = False
                 print("Invalid guess, please try again")
                 word = input()
+            
+            if self.mode == False:
+                flagHard = True
+            elif self.lastguess == "":
+                flagHard = True
+            else:
+                w, v = self.lastguess
+                w = list(w)
+                v = list(v)
+                for i in range(len(v)):
+                    if v[i] == "-"
+                        w[i] = "-"
+                for i in range(len(w)):
+                    if v[i] = "G":
+                        if w[i] != l[i]:
+                            flagHard = False
+                            print("You are missing letters")
+                            word = input()
+                        else:
+                            flagHard = True
+                    elif w[i] not in word:
+p  flagHard = False
+                        print("You are missing letters")
+                            
 
         return word
 
@@ -76,8 +103,6 @@ class Wordle():
         for n in range(len(e)):
             print(e[n])
         print("Try for yourself at [ https://github.com/saperoi/misc/tree/main/python/wordle ]")
-        print()
-        print()
 
 
     def wordle(self, epsilon):
@@ -87,6 +112,7 @@ class Wordle():
         Corr = self.nCopies(len(self.secret), "G")
         Corr = copyfix(Corr, True)
         emojis = []
+        self.lastguess = ""
         while i <= self.maxguesses:
             print("Guess " + str(i) + "/" + str(self.maxguesses))
             print("--------------")
@@ -124,7 +150,8 @@ class Wordle():
             for c in range(len(scrtcop)):
                 verdict += verdictl[c]
                 verdict2 += verdictl2[c]
-            emojis.append(verdict)
+            emojis.append(verdict2)
+            self.guesslist = (word, verdict2)
             print(verdict)
             self.vflag = False
             if verdict2 == Corr:
