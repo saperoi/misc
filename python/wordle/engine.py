@@ -76,6 +76,9 @@ class Wordle():
         for n in range(len(e)):
             print(e[n])
         print("Try for yourself at [ https://github.com/saperoi/misc/tree/main/python/wordle ]")
+        print()
+        print()
+
 
     def wordle(self, epsilon):
         starttime = time.time()
