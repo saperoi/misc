@@ -9,9 +9,12 @@ class Wordle():
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.maxguesses = max
-        self.name = name
         self.allowed = allowed
         self.mode = hard
+        if self.mode == True:
+            self.name = name + " HARD"
+        if self.mode == False:
+            self.name = name
 
     def getGuess(self, epsilon):
         flagChar = False
@@ -20,19 +23,30 @@ class Wordle():
         flagHard = False
         word = input()
 
-        while flagChar == False or flagLen == False or flagDict == False:
-            if len(word) != len(self.secret):
+        while flagChar == False or flagLen == False or flagDict == False or flagHard == False:
+            
+            # flagLen
+
+            if flagLen == True:
+                continue
+            elif len(word) != len(self.secret):
                 l = list(word)
                 flagLen = False
                 if len(word) > len(self.secret):
                     print("Guess is too long, please try again")
+                    flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                     word = input()
                 if len(word) < len(self.secret):
                     print("Guess is too short, please try again")
+                    flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                     word = input()
             else:
                 flagLen = True
-                
+            
+            # flagChar
+            
+            if flagChar == True:
+                continue
             flag01 = True
             for p in range(len(word)):
                 if word[p] not in self.allowed:
@@ -40,40 +54,55 @@ class Wordle():
             if flag01 == False:
                 flagChar = False
                 print("Guess contains invalid characters, please try again")
+                flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                 word = input()
             else:
                 flagChar = True
-
+                
+            # flagDict
+            
+            if flagDict == True:
+                continue
             if word in epsilon:
                 flagDict = True
             else:
                 flagDict = False
                 print("Invalid guess, please try again")
+                flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                 word = input()
+                
+            # flagHard
+
+            w, v = self.lastguess
+            w = list(w)
+            v = list(v)
+            l = list(word)
             
+            if flagHard == True:
+                continue
             if self.mode == False:
                 flagHard = True
-            elif self.lastguess == "":
+            elif w == []:
                 flagHard = True
             else:
-                w, v = self.lastguess
-                w = list(w)
-                v = list(v)
-                for i in range(len(v)):
-                    if v[i] == "-"
-                        w[i] = "-"
+                print(w)
+                print(l)
                 for i in range(len(w)):
-                    if v[i] = "G":
+                    vflagtemp = False
+                    if v[i] == "G":
                         if w[i] != l[i]:
                             flagHard = False
+                            vflagtemp = True
                             print("You are missing letters")
+                            flagChar, flagLen, flagDict, flagHard = (False, False, False, False)   
                             word = input()
-                        else:
-                            flagHard = True
-                    elif w[i] not in word:
-p  flagHard = False
+                    elif w[i] not in word and v[i] != "-":
+                        flagHard = False
                         print("You are missing letters")
-                            
+                        flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
+                        word = input()
+                    if vflagtemp == False:
+                        flagHard = True
 
         return word
 
@@ -112,7 +141,7 @@ p  flagHard = False
         Corr = self.nCopies(len(self.secret), "G")
         Corr = copyfix(Corr, True)
         emojis = []
-        self.lastguess = ""
+        self.lastguess = ("", "")
         while i <= self.maxguesses:
             print("Guess " + str(i) + "/" + str(self.maxguesses))
             print("--------------")
@@ -151,7 +180,7 @@ p  flagHard = False
                 verdict += verdictl[c]
                 verdict2 += verdictl2[c]
             emojis.append(verdict2)
-            self.guesslist = (word, verdict2)
+            self.lastguess = (word, verdict2)
             print(verdict)
             self.vflag = False
             if verdict2 == Corr:

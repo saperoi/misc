@@ -28,13 +28,14 @@ for i in range(len(gamma)):
 gammaf.close()
 os.remove("g.txt")
 
-print("                        _ _      ")
-print("                       | | |     ")
-print(" __      _____  _ __ __| | | ___ ")
-print(" \\ \\ /\\ / / _ \\| '__/ _` | |/ _ \\")
-print("  \\ V  V / (_) | | | (_| | |  __/")
-print("   \\_/\\_/ \\___/|_|  \\__,_|_|\\___|")
-print("                                 ")
+print("   _____ _      _____         _ _      ")
+print("  / ____| |    |_   _|       | | |     ")
+print(" | |    | |      | |  _ __ __| | | ___ ")
+print(" | |    | |      | | | '__/ _` | |/ _ \\")
+print(" | |____| |____ _| |_| | | (_| | |  __/")
+print("  \\_____|______|_____|_|  \\__,_|_|\\___|") 
+print("                                       ")
+print("                                       ")
 print("Please enter your first guess. y = incorrect spot, G = correct spot, - = not in word")
 
 def setup():
@@ -45,7 +46,8 @@ def setup():
     maxg = 6 - max(0, -(len(hidden)+5))  # x + 1 if <5, 6 if >= 5
 
     print(len(hidden))
-    wordle = w.Wordle(hidden, maxg, "wordle")
+    print(hidden)
+    wordle = w.Wordle(hidden, maxg, "CLIrdle", hard = True)
     wordle.wordle(gamma)
 
 setup()
