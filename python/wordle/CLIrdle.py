@@ -45,9 +45,8 @@ def setup():
     # maxg = 6 + 1  # 6
     maxg = 6 - max(0, -(len(hidden)+5))  # x + 1 if <5, 6 if >= 5
 
-    print(len(hidden))
-    print(hidden)
-    wordle = w.Wordle(hidden, maxg, "CLIrdle", hard = True)
+    print(len(hidden) + "letters")
+    wordle = w.Wordle(hidden, maxg, "CLIrdle")
     wordle.wordle(gamma)
 
 setup()

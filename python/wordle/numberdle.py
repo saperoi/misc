@@ -31,7 +31,6 @@ def setup():
     hidden = w.secretWord(alpha, len(alpha), False)
     maxg = 6
 
-    print(len(hidden))
     numberdle = w.Wordle(hidden, maxg, "numberdle", allowed = "0123456789")
     numberdle.wordle(alpha)
 

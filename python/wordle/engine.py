@@ -11,10 +11,12 @@ class Wordle():
         self.maxguesses = max
         self.allowed = allowed
         self.mode = hard
+        self.name = name
         if self.mode == True:
-            self.name = name + " HARD"
-        if self.mode == False:
-            self.name = name
+            self.name += " HARD"
+            print("You are playing hard mode, meaning you're required to use letters you used before, and in the correct spot if it was earlier.")
+            print("To change this, go to your file you're running this from (probably \"wordle.py\") and change the following line:")
+            print("`hard = True` to `hard = False`")
 
     def getGuess(self, epsilon):
         flagChar = False
