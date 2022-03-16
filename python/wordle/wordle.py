@@ -42,7 +42,7 @@ def setup():
     # maxg = 4 + max(2, (len(hidden)-5))  # 6 if <5, n+1 if >= 5
     # maxg = len(hidden) + 1  # n + 1
     # maxg = 6 + 1  # 6
-    maxg = 1 - max(0, -(len(hidden)+6)) + 5  # x + 1 if <5, 6 if >= 5
+    maxg = 6 - max(0, -(len(hidden)+5))  # x + 1 if <5, 6 if >= 5
 
     print(len(hidden))
     wordle = w.Wordle(hidden, maxg, "wordle")
