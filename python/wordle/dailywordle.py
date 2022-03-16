@@ -40,7 +40,11 @@ def setup():
     hidden = alpha[n]
     maxg = 6
 
-    wordle = w.Wordle(hidden, maxg, "CLIrdle", hard = False)
+    wordle = w.Wordle(hidden, maxg, "wordle", hard = False)
     wordle.wordle(gamma)
 
 setup()
+print()
+print()
+print()
+print()

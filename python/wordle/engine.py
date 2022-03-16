@@ -1,5 +1,4 @@
 import random
-from re import A
 import time
 from colorama import init, Fore, Style
 
