@@ -70,7 +70,9 @@ class Wordle():
                 if l == "G":
                     w += "🟩"
             e.append(w)
-        print(self.name + " " + str(self.guesses) + "/" + str(self.maxguesses))
+        print()
+        print()
+        print(self.name + " " + str(self.guesses) + "/" + str(self.maxguesses) + "   " + str(self.timespent) + " s")
         for n in range(len(e)):
             print(e[n])
         print("Try for yourself at [ https://github.com/saperoi/misc/tree/main/python/wordle ]")
@@ -124,12 +126,14 @@ class Wordle():
             self.vflag = False
             if verdict2 == Corr:
                 print("You won! The word was: " + self.secret)
-                print("You guessed it in " + str(i) + " guesses, and took " + str(round((time.time() - lasttime), 2)) + " seconds.")
+                self.timespent = round((time.time() - lasttime), 2)
+                print("You guessed it in " + str(i) + " guesses, and took " + str(self.timespent) + " seconds.")
                 self.vflag = True
                 self.guesses = str(i)
                 i = self.maxguesses
             i += 1
         if self.vflag == False:
+            self.timespent = "/./"
             print("You lost :( The word was: " + self.secret)
             self.guesses = "X"
         print("Share with your friends!")
