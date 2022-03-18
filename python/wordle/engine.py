@@ -1,5 +1,8 @@
 import random
 import time
+import requests
+import os
+import pyfiglet
 from colorama import init, Fore, Style
 
 class Wordle():
@@ -11,43 +14,49 @@ class Wordle():
         self.allowed = allowed
         self.mode = hard
         self.name = name
+        f = pyfiglet.Figlet(font='big')
+        print(f.renderText(name))
+        print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
+        print()
         if self.mode == True:
             self.name += " HARD"
             print("You are playing hard mode, meaning you're required to use letters you used before, and in the correct spot if it was earlier.")
             print("To change this, go to your file you're running this from (probably \"wordle.py\") and change the following line:")
             print("`hard = True` to `hard = False`")
+        print()
+        print(str(len(self.secret)) + " letters")
+        print()
 
-    def getGuess(self, epsilon):
+    def getGuess(self, epsilon, guesslist):
         flagChar = False
         flagLen = False
         flagDict = False
+        flagDeja = False
         flagHard = False
         word = input()
 
-        while flagChar == False or flagLen == False or flagDict == False or flagHard == False:
-            
-            # flagLen
+        while flagChar == False or flagLen == False or flagDict == False or flagDeja == False or flagHard == False:
+            flagChar = False
+            flagLen = False
+            flagDict = False
+            flagDeja = False
+            flagHard = False
 
-            if flagLen == True:
-                continue
-            elif len(word) != len(self.secret):
+            # flagLen
+            if len(word) == len(self.secret):
+                flagLen = True
+            else:
                 l = list(word)
                 flagLen = False
                 if len(word) > len(self.secret):
                     print("Guess is too long, please try again")
-                    flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                     word = input()
                 if len(word) < len(self.secret):
                     print("Guess is too short, please try again")
-                    flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                     word = input()
-            else:
-                flagLen = True
             
             # flagChar
             
-            if flagChar == True:
-                continue
             flag01 = True
             for p in range(len(word)):
                 if word[p] not in self.allowed:
@@ -55,23 +64,35 @@ class Wordle():
             if flag01 == False:
                 flagChar = False
                 print("Guess contains invalid characters, please try again")
-                flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                 word = input()
             else:
                 flagChar = True
                 
             # flagDict
             
-            if flagDict == True:
-                continue
             if word in epsilon:
                 flagDict = True
             else:
                 flagDict = False
                 print("Invalid guess, please try again")
-                flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                 word = input()
                 
+            # flagDeja
+            
+            if guesslist == []:
+                flagDeja = True
+            else:
+                tempflagdeja = False
+                for i in range(len(guesslist)):
+                    if word == guesslist[i]:
+                        tempflagdeja = True
+                if tempflagdeja == False:
+                    flagDeja = True
+                else:
+                    flagDeja = False
+                    print("Already guessed this word")
+                    word = input()
+
             # flagHard
 
             w, v = self.lastguess
@@ -79,8 +100,6 @@ class Wordle():
             v = list(v)
             l = list(word)
             
-            if flagHard == True:
-                continue
             if self.mode == False:
                 flagHard = True
             elif w == []:
@@ -95,12 +114,10 @@ class Wordle():
                             flagHard = False
                             vflagtemp = True
                             print("You are missing letters")
-                            flagChar, flagLen, flagDict, flagHard = (False, False, False, False)   
                             word = input()
                     elif w[i] not in word and v[i] != "-":
                         flagHard = False
                         print("You are missing letters")
-                        flagChar, flagLen, flagDict, flagHard = (False, False, False, False)
                         word = input()
                     if vflagtemp == False:
                         flagHard = True
@@ -143,11 +160,13 @@ class Wordle():
         Corr = copyfix(Corr, True)
         emojis = []
         self.lastguess = ("", "")
+        guesslist = []
         while i <= self.maxguesses:
             print("Guess " + str(i) + "/" + str(self.maxguesses))
             print("--------------")
-            word = self.getGuess(epsilon)
+            word = self.getGuess(epsilon, guesslist)
             word = word.lower()
+            guesslist.append(word)
             word = list(word)
             scrtcop = self.secret
             scrtlistcop = list(scrtcop)
@@ -213,3 +232,16 @@ def copyfix(aw, bool = False):
     aw = list(av)
     if bool == True: return av
     return av, aw
+
+def getList(url):
+    r = requests.get(url)
+    urlf = open("temp.txt", "wb")
+    urlf.write(r.content)
+    urlf.close()
+    urlf = open("temp.txt", "r")
+    listi = urlf.readlines()
+    for i in range(len(listi)):
+        listi[i] = listi[i].replace("\n", "")
+    urlf.close()
+    os.remove("temp.txt")
+    return listi
