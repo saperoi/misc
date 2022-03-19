@@ -25,7 +25,11 @@ class Wordle():
             print("To change this, go to your file you're running this from (probably \"wordle.py\") and change the following line:")
             print("`hard = True` to `hard = False`")
         print()
-        print(str(len(self.secret)) + " letters")
+        if self.wordcount == 1:
+            print("1 word of length " + str(len(self.secret)))
+        else:
+            splot = self.secret.split(" ")
+            print(str(len(splot)) + " words of length " + str(len(splot[0])))
         print()
 
     def getGuess(self, epsilon, guesslist):
@@ -42,7 +46,11 @@ class Wordle():
             flagDict = False
             flagDeja = False
             flagHard = False
-            length = 5
+            if self.wordcount == 1:
+                length = len(hidden)
+            else:
+                splot = self.secret.split(" ")
+                length = len(splot[0])
 
             # flagLen
             if len(word) == length:

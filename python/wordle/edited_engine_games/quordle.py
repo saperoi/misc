@@ -5,6 +5,7 @@ gammalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_a
 alpha = w.getList(alphalink)
 gamma = w.getList(gammalink)
 name = "quordle"
+global totalwords
 totalwords = 4
 
 def wordgen():
@@ -14,18 +15,14 @@ def wordgen():
     return hidden
 
 def setup():
-    hidden = ""
-    hidden += wordgen()
-    hidden += " "
-    hidden += wordgen()
-    hidden += " "
-    hidden += wordgen()
-    hidden += " "
-    hidden += wordgen()
+    hidden = wordgen()
+    for i in range(totalwords-1)
+    hidden += " " + wordgen()
+    
     # maxg = 4 + max(2, (len(hidden)-5))  # 6 if <5, n+1 if >= 5
     # maxg = len(hidden) + 1  # n + 1
     # maxg = 6 + 1  # 6
-    maxg = 6 - max(0, -(len(hidden)+5))  # x + 1 if <5, 6 if >= 5
+    maxg = 5 + totalwords  # x + 1 if <5, 6 if >= 5
 
     wordle = w.Wordle(hidden, maxg, name, totalwords)
     wordle.wordle(gamma)
