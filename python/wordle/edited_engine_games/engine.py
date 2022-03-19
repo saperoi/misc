@@ -6,14 +6,15 @@ import pyfiglet
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden, max, name = "wordle", allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard = False):
+    def __init__(self, hidden, max, name = "wordle", totalwords = 1, allowed = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN"):
         init()
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.maxguesses = max
         self.allowed = allowed
-        self.mode = hard
+        self.mode = False
         self.name = name
+        self.wordcount = 1
         f = pyfiglet.Figlet(font='big')
         print(f.renderText(name))
         print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
@@ -24,7 +25,7 @@ class Wordle():
             print("To change this, go to your file you're running this from (probably \"wordle.py\") and change the following line:")
             print("`hard = True` to `hard = False`")
         print()
-        print("5 letters")
+        print(str(len(self.secret)) + " letters")
         print()
 
     def getGuess(self, epsilon, guesslist):
@@ -41,7 +42,7 @@ class Wordle():
             flagDict = False
             flagDeja = False
             flagHard = False
-            length = len(self.secret)
+            length = 5
 
             # flagLen
             if len(word) == length:
@@ -157,7 +158,7 @@ class Wordle():
         starttime = time.time()
         lasttime = starttime
         i = 1
-        Corr = self.nCopies(len(self.secret), "G")
+        Corr = self.nCopies(len(self.secret.replace(" ", "")), "G")
         Corr = copyfix(Corr, True)
         emojis = []
         self.lastguess = ("", "")
@@ -168,6 +169,9 @@ class Wordle():
             word = self.getGuess(epsilon, guesslist)
             word = word.lower()
             guesslist.append(word)
+            gw = word
+            for i in range(len(word)-1):
+                word += " " + gw
             word = list(word)
             scrtcop = self.secret
             scrtlistcop = list(scrtcop)
@@ -197,6 +201,10 @@ class Wordle():
                 if verdictl[j] == "":
                     verdictl[j] = self.FORES[0] + "-" + Style.RESET_ALL
                     verdictl2[j] = "-"
+            for j in range(len(self.secret)):
+                if scrtlistcop[j] == " ":
+                    verdictl[j] = "_"
+                    verdictl2[j] = "_"
             for c in range(len(scrtcop)):
                 verdict += verdictl[c]
                 verdict2 += verdictl2[c]
@@ -204,7 +212,7 @@ class Wordle():
             self.lastguess = (word, verdict2)
             print(verdict)
             self.vflag = False
-            if verdict2 == Corr:
+            if verdict2.replace(" ", "") == Corr:
                 print("You won! The word was: " + self.secret)
                 self.timespent = round((time.time() - lasttime), 2)
                 print("You guessed it in " + str(i) + " guesses, and took " + str(self.timespent) + " seconds.")
