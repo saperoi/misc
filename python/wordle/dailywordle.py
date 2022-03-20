@@ -19,7 +19,7 @@ def setup():
     hidden = alpha[n]
     maxg = 6
 
-    wordle = w.Wordle(hidden, maxg, name, hard = False)
+    wordle = w.Wordle(hidden, maxg, name, hard = False, colors="colorblinddark")
     wordle.wordle(gamma)
 
 setup()

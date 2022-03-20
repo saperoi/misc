@@ -7,4 +7,5 @@ tests/
 python/page.json
 python/page.html
 python/page.xml
-python/wordle/__pycache__
+python/wordle/__pycache__/
+python/wordle/edited_engine_games/__pycache__/
