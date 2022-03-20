@@ -158,6 +158,8 @@ class Wordle():
                     w += self.colors[1]
                 if l == "G":
                     w += self.colors[2]
+                if l == " ":
+                    w += " "
             e.append(w)
         print()
         print()
@@ -171,41 +173,36 @@ class Wordle():
         guessl = list(guess)
         verdict = []
         colorverdict = []
+        arrverdict = []
 
         for _ in range(self.wordcount):
-            tempverdict = nCopies(len(guess), "")
-            tempcolorverdict = nCopies(len(guess), "")
             sect = sec[_]
             secl = list(sect)
-            for a in range(len(guess)):
-                if guessl[a] == secl[a]:
-                    tempcolorverdict[a] = self.FORES[2] + "G" + Style.RESET_ALL
-                    tempverdict[a] = "G"
-                    secl[a] = "?"
-                    sect, secl = copyfix(secl)
-            print(tempverdict)
-            print(secl)
-            for b in range(len(guess)):
-                if tempverdict[b] != "G":
+            tempverdict = nCopies(len(sect), "")
+            tempcolorverdict = nCopies(len(sect), "")
+            greens = nCopies(len(sect), False)
+
+            for j in range(len(sect)):
+                if guessl[j] == secl[j]:
+                    tempcolorverdict[j] = self.FORES[2] + "G" + Style.RESET_ALL
+                    tempverdict[j] = "G"
+                    secl[j] = "-"
+                    greens[j] = True
+            for j in range(len(sect)):
+                if greens[j] == True:
                     continue
-                else:
-                    if guessl[b] in sect:
-                        for c in range(len(guess)):
-                            if guessl[b] == secl[c]:
-                                tempcolorverdict[b] = self.FORES[1] + "y" + Style.RESET_ALL
-                                tempverdict[b] = "y"
-                                secl[c] = "?"
-                                sect, secl = copyfix(secl)
-            print(tempverdict)
-            print(secl)
-            for d in range(len(guess)):
-                if secl[d] != "?":
-                    tempcolorverdict[d] = self.FORES[0] + "-" + Style.RESET_ALL
-                    tempverdict[d] = "-"
-                    secl[d] = "?"
-                    sect, secl = copyfix(secl)
-            print(tempverdict)
-            print(secl)
+                elif guessl[j] in sect:
+                    for k in range(len(sect)):
+                        if guessl[j] == secl[k]:
+                            tempcolorverdict[j] = self.FORES[1] + "y" + Style.RESET_ALL
+                            tempverdict[j] = "y"
+                            secl[k] = "-"
+                            sect, secl = copyfix(secl)
+            for j in range(len(sect)):
+                if tempverdict[j] == "":
+                    tempcolorverdict[j] = self.FORES[0] + "-" + Style.RESET_ALL
+                    tempverdict[j] = "-"
+            arrverdict.append(copyfix(tempverdict, True))
             if _ != self.wordcount - 1:
                 tempverdict.append(" ")
                 tempcolorverdict.append(" ")
@@ -216,19 +213,25 @@ class Wordle():
         colorverdict = ArrToStrSpaces(colorverdict)
         verdict = ArrToStrSpaces(verdict)
         
-        return verdict, colorverdict
+        return verdict, colorverdict, arrverdict
 
     def wordle(self, epsilon):
-        sec = self.secret
+        sec = []
+        for _ in range(len(self.secret)):
+            sec.append(self.secret[_])
         starttime = time.time()
         lasttime = starttime
         i = 1
-        Corr = ""
+        SpecCorr = []
+        Blanks = []
         for _ in range(self.wordcount):
+            _____ = ""
+            ______ = ""
             for ___ in range(len(self.secret[_])):
-                Corr += "G"
-            if _ != self.wordcount - 1:
-                Corr += " "
+                _____ += "G"
+                ______ += "-"
+            SpecCorr.append(_____)
+            Blanks.append(______)
 
         emojis = []
         self.lastguess = ("", "")
@@ -241,12 +244,17 @@ class Wordle():
             guesslist.append(word)
             word = list(word)
 
-            verdict, colorverdict = self.getVerdict(word, sec)
+            verdict, colorverdict, arrverdict = self.getVerdict(word, sec)
             emojis.append(verdict)
             self.lastguess = (word, verdict)
             print(colorverdict)
             self.vflag = False
-            if verdict == Corr:
+            
+            for j in range(len(arrverdict)):
+                if arrverdict[j] == SpecCorr[j]:
+                    sec[j] = copyfix(nCopies(len(sec[j]), "-"), True)
+                
+            if sec == Blanks:
                 if self.wordcount != 1:
                     print("You won! The was were: " + ArrToStrSpaces(self.secret))
                 else:
