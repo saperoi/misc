@@ -3,7 +3,6 @@ import engine as w
 alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
 betalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic256.txt"
 gammalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/giant256.txt"
-global maxguesses
 maxguesses = 17
 name = "sha256le"
 
@@ -13,7 +12,7 @@ gamma = w.getList(gammalink)
 
 def setup():
     hidden, n = w.secretWord(alpha, len(alpha), True)
-    hiddenHash = beta[n]
+    hiddenHash = [beta[n]]
     #print(hidden)
     #print(hiddenHash)
     Sha256le = w.Wordle(hiddenHash, maxguesses, name)

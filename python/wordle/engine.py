@@ -6,11 +6,12 @@ import pyfiglet
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, colors: str = "light"):
+    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, colors: str = "dark"):
         init()
         self.color_options = ["light", "dark", "colorblind", "colorblinddark", "text", "nerdle", "nerdlelight"]
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
+        self.wordcount = len(hidden)
         self.maxguesses = max
         self.allowed = allowed
         self.mode = hard
@@ -39,7 +40,10 @@ class Wordle():
             print("To change this, go to your file you're running this from (probably \"wordle.py\") and change the following line:")
             print("`hard = True` to `hard = False`")
         print()
-        print("5 letters")
+        if self.wordcount == 1:
+            print("1 word of length " + str(len(self.secret[0])))
+        else:
+            print(str(len(self.secret)) + " words of length " + str(len(self.secret[0])))
         print()
 
     def getGuess(self, epsilon, guesslist):
@@ -56,9 +60,10 @@ class Wordle():
             flagDict = False
             flagDeja = False
             flagHard = False
-            length = len(self.secret)
+            length = len(self.secret[0])
 
             # flagLen
+
             if len(word) == length:
                 flagLen = True
             else:
@@ -140,11 +145,7 @@ class Wordle():
 
         return word
 
-    def nCopies(self, n, copy):
-        res = []
-        for _ in range(n):
-            res.append(copy)
-        return res
+    def getColorOptions(self): print(self.color_options)
 
     def emojify(self, arr):
         e = []
@@ -159,6 +160,8 @@ class Wordle():
                     w += self.colors[1]
                 if l == "G":
                     w += self.colors[2]
+                if l == " ":
+                    w += " "
             e.append(w)
         print()
         print()
@@ -167,13 +170,71 @@ class Wordle():
             print(e[n])
         print("Try for yourself at <https://github.com/saperoi/misc/tree/main/python/wordle>")
 
+    def getVerdict(self, guess, seca):
+        sec = seca
+        guessl = list(guess)
+        verdict = []
+        colorverdict = []
+        arrverdict = []
+
+        for _ in range(self.wordcount):
+            sect = sec[_]
+            secl = list(sect)
+            tempverdict = nCopies(len(sect), "")
+            tempcolorverdict = nCopies(len(sect), "")
+            greens = nCopies(len(sect), False)
+
+            for j in range(len(sect)):
+                if guessl[j] == secl[j]:
+                    tempcolorverdict[j] = self.FORES[2] + "G" + Style.RESET_ALL
+                    tempverdict[j] = "G"
+                    secl[j] = "-"
+                    greens[j] = True
+            for j in range(len(sect)):
+                if greens[j] == True:
+                    continue
+                elif guessl[j] in sect:
+                    for k in range(len(sect)):
+                        if guessl[j] == secl[k]:
+                            tempcolorverdict[j] = self.FORES[1] + "y" + Style.RESET_ALL
+                            tempverdict[j] = "y"
+                            secl[k] = "-"
+                            sect, secl = copyfix(secl)
+            for j in range(len(sect)):
+                if tempverdict[j] == "":
+                    tempcolorverdict[j] = self.FORES[0] + "-" + Style.RESET_ALL
+                    tempverdict[j] = "-"
+            arrverdict.append(copyfix(tempverdict, True))
+            if _ != self.wordcount - 1:
+                tempverdict.append(" ")
+                tempcolorverdict.append(" ")
+            tempverdict = copyfix(tempverdict, True)
+            tempcolorverdict = copyfix(tempcolorverdict, True)
+            verdict.append(tempverdict)
+            colorverdict.append(tempcolorverdict)
+        colorverdict = ArrToStrSpaces(colorverdict)
+        verdict = ArrToStrSpaces(verdict)
+        
+        return verdict, colorverdict, arrverdict
 
     def wordle(self, epsilon):
+        sec = []
+        for _ in range(len(self.secret)):
+            sec.append(self.secret[_])
         starttime = time.time()
         lasttime = starttime
         i = 1
-        Corr = self.nCopies(len(self.secret), "G")
-        Corr = copyfix(Corr, True)
+        SpecCorr = []
+        Blanks = []
+        for _ in range(self.wordcount):
+            _____ = ""
+            ______ = ""
+            for ___ in range(len(self.secret[_])):
+                _____ += "G"
+                ______ += "-"
+            SpecCorr.append(_____)
+            Blanks.append(______)
+
         emojis = []
         self.lastguess = ("", "")
         guesslist = []
@@ -184,43 +245,22 @@ class Wordle():
             word = word.lower()
             guesslist.append(word)
             word = list(word)
-            scrtcop = self.secret
-            scrtlistcop = list(scrtcop)
-            verdict = ""
-            verdict2 = ""
-            verdictl = self.nCopies(len(self.secret), "")
-            verdictl2 = self.nCopies(len(self.secret), "")
-            greens = self.nCopies(len(self.secret), False)
 
-            for j in range(len(self.secret)):
-                if word[j] == scrtlistcop[j]:
-                    verdictl[j] = self.FORES[2] + "G" + Style.RESET_ALL
-                    verdictl2[j] = "G"
-                    scrtlistcop[j] = "-"
-                    greens[j] = True
-            for j in range(len(self.secret)):
-                if greens[j] == True:
-                    continue
-                elif word[j] in scrtcop:
-                    for k in range(len(self.secret)):
-                        if word[j] == scrtlistcop[k]:
-                            verdictl[j] = self.FORES[1] + "y" + Style.RESET_ALL
-                            verdictl2[j] = "y"
-                            scrtlistcop[k] = "-"
-                            scrtcop, scrtlistcop = copyfix(scrtlistcop)
-            for j in range(len(self.secret)):
-                if verdictl[j] == "":
-                    verdictl[j] = self.FORES[0] + "-" + Style.RESET_ALL
-                    verdictl2[j] = "-"
-            for c in range(len(scrtcop)):
-                verdict += verdictl[c]
-                verdict2 += verdictl2[c]
-            emojis.append(verdict2)
-            self.lastguess = (word, verdict2)
-            print(verdict)
+            verdict, colorverdict, arrverdict = self.getVerdict(word, sec)
+            emojis.append(verdict)
+            self.lastguess = (word, verdict)
+            print(colorverdict)
             self.vflag = False
-            if verdict2 == Corr:
-                print("You won! The word was: " + self.secret)
+            
+            for j in range(len(arrverdict)):
+                if arrverdict[j] == SpecCorr[j]:
+                    sec[j] = copyfix(nCopies(len(sec[j]), "-"), True)
+                
+            if sec == Blanks:
+                if self.wordcount != 1:
+                    print("You won! The was were: " + ArrToStrSpaces(self.secret))
+                else:
+                    print("You won! The word was: " + ArrToStrSpaces(self.secret))
                 self.timespent = round((time.time() - lasttime), 2)
                 print("You guessed it in " + str(i) + " guesses, and took " + str(self.timespent) + " seconds.")
                 self.vflag = True
@@ -229,14 +269,16 @@ class Wordle():
             i += 1
         if self.vflag == False:
             self.timespent = "/./"
-            print("You lost :( The word was: " + self.secret)
+            if self.wordcount != 1:
+                print("You lost :( The was were: " + ArrToStrSpaces(self.secret))
+            else:
+                print("You lost :( The word was: " + ArrToStrSpaces(self.secret))
             self.guesses = "X"
         print()
         print("Share with your friends!")
-        print("Emoji's might show up as ⍰ but they're still copyable")
+        print("Emoji's might show up as  ⍰  but they're still copyable")
         self.emojify(emojis)
         
-
 def secretWord(alpha, n, bool = False):
     g = random.randint(0, n-1)
     secret = alpha[g]
@@ -263,3 +305,17 @@ def getList(url):
     urlf.close()
     os.remove("temp.txt")
     return listi
+
+def ArrToStrSpaces(arr):
+    stri = ""
+    for i in range(len(arr)):
+        stri += arr[i]
+        if i != len(arr) - 1:
+            stri += " "
+    return stri
+
+def nCopies(n, copy):
+    res = []
+    for _ in range(n):
+        res.append(copy)
+    return res

@@ -1,11 +1,11 @@
 import engine as w
 
-alphalink = "https://raw.githubusercontent.com/saperoi/misc/master/src_files/dict/basic.txt"
-gammalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+alphalink = "https://example.com/alpha.txt"
+gammalink = "https://example.com/gamma.txt"
 wordcount = 1
 alpha = w.getList(alphalink)
 gamma = w.getList(gammalink)
-name = "CLIrdle"
+name = "wordle"
 
 def setup():
     hidden = []

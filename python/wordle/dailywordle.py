@@ -16,7 +16,7 @@ def setup():
     d = d2 - d1
     d = int(d.days)
     n = (d - 31) % len(alpha)
-    hidden = alpha[n]
+    hidden = [alpha[n]]
     maxg = 6
 
     wordle = w.Wordle(hidden, maxg, name, hard = False, colors="colorblinddark")
