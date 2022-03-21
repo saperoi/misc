@@ -5,7 +5,6 @@ gammalink = "https://cdn.discordapp.com/attachments/947100010959470595/954784115
 alpha = w.getList(alphalink)
 gamma = w.getList(gammalink)
 name = "quordle"
-global totalwords
 totalwords = 4
 
 def wordgen():
@@ -24,7 +23,7 @@ def setup():
     # maxg = 6 + 1  # 6
     maxg = 5 + totalwords  # x + 1 if <5, 6 if >= 5
 
-    wordle = w.Wordle(hidden, maxg, name, colors = "dark")
+    wordle = w.Wordle(hidden, maxg, name, colors = "colorblinddark")
     wordle.wordle(gamma)
 
 setup()

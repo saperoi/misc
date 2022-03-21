@@ -166,6 +166,7 @@ class Wordle():
         print()
         print()
         print(self.name + " " + str(self.guesses) + "/" + str(self.maxguesses) + "   " + str(self.timespent) + " s")
+        print(ArrToStrSpaces(self.guessnums, "/"))
         for n in range(len(e)):
             print(e[n])
         print("Try for yourself at <https://github.com/saperoi/misc/tree/main/python/wordle>")
@@ -219,8 +220,10 @@ class Wordle():
 
     def wordle(self, epsilon):
         sec = []
+        self.guessnums = []
         for _ in range(len(self.secret)):
             sec.append(self.secret[_])
+            self.guessnums.append("X")
         starttime = time.time()
         lasttime = starttime
         i = 1
@@ -255,6 +258,7 @@ class Wordle():
             for j in range(len(arrverdict)):
                 if arrverdict[j] == SpecCorr[j]:
                     sec[j] = copyfix(nCopies(len(sec[j]), "-"), True)
+                    self.guessnums[j] = i
                 
             if sec == Blanks:
                 if self.wordcount != 1:
@@ -306,12 +310,12 @@ def getList(url):
     os.remove("temp.txt")
     return listi
 
-def ArrToStrSpaces(arr):
+def ArrToStrSpaces(arr, stro = " "):
     stri = ""
     for i in range(len(arr)):
-        stri += arr[i]
+        stri += str(arr[i])
         if i != len(arr) - 1:
-            stri += " "
+            stri += stro
     return stri
 
 def nCopies(n, copy):
