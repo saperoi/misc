@@ -6,7 +6,7 @@ import pyfiglet
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, color: str = "dark"):
+    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, colors: str = "dark"):
         init()
         self.color_options = ["light", "dark", "colorblind", "colorblinddark",
         "text", "nerdle", "nerdlelight", "queerdle_accessible",
@@ -26,7 +26,7 @@ class Wordle():
         self.mode = hard
         self.name = name
         for i in range(len(self.color_options)):
-            if self.color_options[i] == color:
+            if self.color_options[i] == colors:
                 self.colors = self.color_demos[i]
 
         f = pyfiglet.Figlet(font='big')

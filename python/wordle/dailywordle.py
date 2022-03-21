@@ -2,7 +2,7 @@ import engine as w
 import datetime
 
 alphalink = "https://cdn.discordapp.com/attachments/947100010959470595/954346459283734528/nyt_words_alpha.txt"
-gammalink = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+gammalink = "https://cdn.discordapp.com/attachments/947100010959470595/954784115444547634/nyt_words_gamma.txt"
 alpha = w.getList(alphalink)
 gamma = w.getList(gammalink)
 name = "Daily Wordle"
@@ -19,7 +19,7 @@ def setup():
     hidden = [alpha[n]]
     maxg = 6
 
-    wordle = w.Wordle(hidden, maxg, name, hard = False, color = "colorblinddark")
+    wordle = w.Wordle(hidden, maxg, name, hard = False, colors = "colorblinddark")
     wordle.wordle(gamma)
 
 setup()

@@ -1,6 +1,14 @@
 Arka 5-letter
     https://pastebin.com/raw/x7DiYmZm
 
+New York Times Wordle
+    https://cdn.discordapp.com/attachments/947100010959470595/954346459283734528/nyt_words_alpha.txt
+    https://cdn.discordapp.com/attachments/947100010959470595/954784115444547634/nyt_words_gamma.txt
 
+Jewdle:
+    https://cdn.discordapp.com/attachments/947100010959470595/955565508533555220/jewdle_alpha.txt
+    https://cdn.discordapp.com/attachments/947100010959470595/955565318971994162/jewdle_gamma.txt
 
-
+Canuckle:
+    https://cdn.discordapp.com/attachments/947100010959470595/955601737404809327/canuckle_alpha.txt
+    https://cdn.discordapp.com/attachments/947100010959470595/955601737241206814/canuckle_gamma.txt
