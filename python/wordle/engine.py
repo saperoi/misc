@@ -6,9 +6,18 @@ import pyfiglet
 from colorama import init, Fore, Style
 
 class Wordle():
-    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, colors: str = "dark"):
+    def __init__(self, hidden: list, max: int, name: str = "wordle", allowed: str = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN", hard: bool = False, color: str = "dark"):
         init()
-        self.color_options = ["light", "dark", "colorblind", "colorblinddark", "text", "nerdle", "nerdlelight"]
+        self.color_options = ["light", "dark", "colorblind", "colorblinddark",
+        "text", "nerdle", "nerdlelight", "queerdle_accessible",
+        "queerdle_light", "queerdle2", "canuckle", "jewdle",
+        "byrdle", "bts"]
+        self.color_demos = [
+            ["⬜","🟨","🟩"], ["⬛","🟨","🟩"], ["⬜","🟦","🟧"], ["⬛","🟦","🟧"],
+            ["-","y","G"], ["⬛","🟪","🟩"], ["⬜","🟪","🟩"], ["🎱","🍑","💦"],
+            ["🥥","🍌","🐍"], ["🎱","🍌","🐍"], ["⬛","🟨","🟥"], ["⬜","🟧","🟩"],
+            ["⚪","🟡","🟢"], ["⬛️","🟨","🟪"]
+        ]
         self.FORES = [Fore.WHITE, Fore.YELLOW, Fore.GREEN]
         self.secret = hidden
         self.wordcount = len(hidden)
@@ -16,20 +25,10 @@ class Wordle():
         self.allowed = allowed
         self.mode = hard
         self.name = name
-        if colors not in self.color_options or colors == "light":
-            self.colors = ["⬜","🟨","🟩"]
-        if colors == "dark":
-            self.colors = ["⬛","🟨","🟩"]
-        if colors == "colorblind":
-            self.colors = ["⬜","🟦","🟧"]
-        if colors == "colorblinddark":
-            self.colors = ["⬛","🟦","🟧"]
-        if colors == "nerdle":
-            self.colors = ["⬛","🟪","🟩"]
-        if colors == "nerdlelight":
-            self.colors = ["⬜","🟪","🟩"]
-        if colors == "text":
-            self.colors = ["-","y","G"]
+        for i in range(len(self.color_options)):
+            if self.color_options[i] == color:
+                self.colors = self.color_demos[i]
+
         f = pyfiglet.Figlet(font='big')
         print(f.renderText(name))
         print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
