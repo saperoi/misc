@@ -9,11 +9,15 @@ name = "CLIrdle"
 
 def setup():
     hidden = []
-    for i in range(wordcount):
-        hidden.append(w.secretWord(alpha, len(alpha), False))
-    maxg = 5 + wordcount
+    hidden.append(w.secretWord(alpha, len(alpha), False))
+    for i in range(wordcount - 1):
+        appo = ""
+        while len(appo) != len(hidden[0]):
+            appo = w.secretWord(alpha, len(alpha), False)
+        hidden.append(appo)
+        
+    maxg = 5 + wordcount + max(0, len(hidden[0]) - 5)
     wordle = w.Wordle(hidden, maxg, name, colors = "colorblinddark")
-    wordle.getColorOptions()
     wordle.wordle(gamma)
 
 setup()

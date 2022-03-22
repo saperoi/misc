@@ -8,7 +8,7 @@ name = "quordle"
 totalwords = 4
 
 def wordgen():
-    hidden = w.secretWord(alpha, len(alpha), False)
+    hidden = ""
     while len(hidden) != 5:
         hidden = w.secretWord(alpha, len(alpha), False)
     return hidden
