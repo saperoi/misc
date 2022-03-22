@@ -12,6 +12,8 @@ class Wordle():
         "text", "nerdle", "nerdlelight", "queerdle_accessible",
         "queerdle_light", "queerdle2", "canuckle", "jewdle",
         "byrdle", "bts"]
+        if colors not in self.color_options:
+            raise ValueError("colors: string must be one of %r" % self.color_options)
         self.color_demos = [
             ["⬜","🟨","🟩"], ["⬛","🟨","🟩"], ["⬜","🟦","🟧"], ["⬛","🟦","🟧"],
             ["-","y","G"], ["⬛","🟪","🟩"], ["⬜","🟪","🟩"], ["🎱","🍑","💦"],
