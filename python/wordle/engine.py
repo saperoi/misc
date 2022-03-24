@@ -33,7 +33,7 @@ class Wordle():
 
         f = pyfiglet.Figlet(font='big')
         print(f.renderText(name))
-        print("Please enter your first hash. y = incorrect spot, G = correct spot, - = not in hash")
+        print("Please enter your first guess. y = incorrect spot, G = correct spot, - = not in guess")
         print()
         if self.mode == True:
             self.name += " HARD"
@@ -286,7 +286,7 @@ class Wordle():
         
 def secretWord(alpha, n, bool = False):
     g = random.randint(0, n-1)
-    secret = alpha[g]
+    secret = alpha[g].lower()
     if bool == False: return secret
     return secret, g+1
 

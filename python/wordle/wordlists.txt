@@ -12,3 +12,8 @@ Jewdle:
 Canuckle:
     https://cdn.discordapp.com/attachments/947100010959470595/955601737404809327/canuckle_alpha.txt
     https://cdn.discordapp.com/attachments/947100010959470595/955601737241206814/canuckle_gamma.txt
+
+
+
+
+
