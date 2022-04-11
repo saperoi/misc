@@ -22,23 +22,24 @@ os.remove("silence.wav")
 os.remove("tone.wav")
 os.remove("delimiter.wav")
 
-reqDL("https://media.discordapp.net/attachments/947100010959470595/962826741645193287/Untitled32_20220410232938.png", "image.png")
+reqDL("https://cdn.discordapp.com/attachments/833115587013115934/962836280020975667/qrcode.png", "image.png")
 
 im = Image.open("image.png")
 px = im.load()
-
 wi, he = im.size
 
-bl = (0,0,0,255)
-wh = (255,255,255,255)
+bl = [1, (0, 0, 0), (0,0,0,255)]
+wh = [0, (255, 255, 255), (255,255,255,255)]
 
 comb = AudioSegment.empty()
 
 for _h in range(he):
 	for _w in range(wi):
-		if px[_w, _h] == bl: comb += tone
-		elif px[_w, _h] == wh: comb += silc
+		if px[_w, _h] in bl: comb += tone
+		elif px[_w, _h] in wh: comb += silc
 		else: raise Exception('Invalid color')
 	if _h != he - 1: comb += delm
 
 comb.export("res.wav", format = "wav")
+
+os.remove("image.png")
