@@ -45,17 +45,17 @@ imgs = os.listdir("./tests")
 try:
     imgs.remove("10x")
 except:
-    exceptingLOL = 1 + 1
+    pass
 
 try:
     imgs.remove("ascii.txt")
 except:
-    exceptingLOL = 1 + 1
+    pass
 
 try:
     imgs.remove("binary.txt")
 except:
-    exceptingLOL = 1 + 1
+    pass
 
 b = open("./tests/binary.txt", "a")
 a = open("./tests/ascii.txt", "a")
@@ -67,12 +67,12 @@ for f in range(len(imgs)):
 
     bins = []
 
-    for i in range(width):
+    for j in range(height):
         res = ""
-        for j in range(height):
-            if pix[i,j] == (0, 0, 0):
+        for i in range(width):
+            if pix[i, j] == (0, 0, 0):
                 res += "0"
-            if pix[i,j] == (255, 255, 255):
+            if pix[i, j] == (255, 255, 255):
                 res += "1"
         bins.append(res)
     
@@ -80,9 +80,7 @@ for f in range(len(imgs)):
         b.write(bins[p] + "\n")
         s = letterify(bins[p])
         s = int(s, 16) + 32
-        print(s)
         s = chr(s)
-        print(s)
         try:
             a.write(s)
         except:
