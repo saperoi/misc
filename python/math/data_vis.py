@@ -41,7 +41,7 @@ pl.xlabel("Aantal worpen")
 pl.ylabel("Aantal munten")
 
 pl.show()
-g1.savefig('1.png')
+g1.savefig('tests/1.png')
 pl.close(g1)
 
 
@@ -81,7 +81,7 @@ pl.xlabel("Aantal worpen")
 pl.ylabel("Aantal munten")
 
 pl.show()
-g2.savefig('2.png')
+g2.savefig('tests/2.png')
 pl.close(g2)
 
 # ----------------------------------------------------------
@@ -121,5 +121,5 @@ pl.xlabel("Aantal worpen")
 pl.ylabel("Aantal munten")
 
 pl.show()
-g3.savefig('3.png')
+g3.savefig('tests/3.png')
 pl.close(g3)
