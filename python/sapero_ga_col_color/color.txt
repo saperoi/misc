@@ -1,0 +1,353 @@
+NASA Red #fc3d21
+NASA Blue #0b3d91
+EPA Blue #336699
+AMTRAK Blue #084c6c
+USDA Dark Green #005440
+USDA Dark Blue #002d72
+USIA Blue #047cc4
+USIA Green #04ac64
+USIA Yellow #eca43c
+USIA Red #ec3c44
+ERA Red #c8102e
+ERA Dark Red #990033
+ERA Navy Blue #250e62
+Google Red #db4437
+Google Bright Red #ea4335
+Google Yellow #f4b400
+Google Bright Yellow #fbbc05
+Google Green #0f9d58
+Google Bright Green #34a853
+Google Blue #4285f4
+Google Season of Docs Red #d95040
+Google Season of Docs Yellow #f2bd42
+YouTube Red #ff0000
+YouTube Almost Black #212121
+Discord Old Blurple #7289da
+Discord Blurple #5865f2
+Discord Green #57f287
+Discord Yellow #fee75c
+Discord Fuschia #eb459e
+Discord Red #ed4245
+Twitter Blue #009ef7
+Reddit Orangered #ff4500
+TikTok Razzmatazz #fe2c55
+TikTok Splash #25f4ee
+Panasonic Blue #0041c0
+Starbucks Green #006241
+Samsung Blue #1428a0
+XiaoMi Orange #ff6900
+Target Red #e80018
+WalMart Spark Yellow #ffc220
+WalMart Blue #0071ce
+WalMart Blue Ink #041f41
+WalMart Pink #eb148d
+Flickr True Blue #0063dc
+Flickr Bright Pink #ff0084
+McDonald's Red #bd0017
+McDonald's Yellow #ffc836
+McDonald's Green #264f36
+McDonald's Kraft #b69a81
+Netflix Red #e50914
+Netflix Symbol Dark Red #b20710
+Uber Eats #06c167
+Uber Eats Pepper #142328
+Uber Eats Salt #f6f0ea
+Guilded Gilded #f5c400
+Hulu Green #1ce783
+Hulu Rich Black #040405
+NatGeo Yellow #ffdb00
+AT&T New Orange #ff7200
+AT&T Blue #067ab4
+Yelp Red #c41200
+Yelp 5-star Red #e60512
+Tesla Red #e31937
+Nintendo 3DS Red #ce181e
+Wattpad Hero Orange #ff500A
+Webtoon Green #00dc64
+Duolingo Feather Green #58cc02
+Duolingo Mask Green #89e219
+Duolingo Eel #4b4b4b
+Amazon Orange #ff9900
+Amazon Blue #146eb4
+Spotify Light Green #1ed760
+Spotify Green #1d8954
+Snapchat Yellow #ffcc00
+T-Mobile Magenta #e20074
+T-Mobile Metro Purple #46196e
+T-Mobile Metro Gold #fa9d28
+Huawei Red #c7000b
+Carrefour Red #c20016
+Carrefour Blue #254f9a
+Patreon Fiery Coral #ff424d
+Ko-Fi Red #ff5e5b
+Ko-Fi Blue #13c3ff
+Ko-Fi Yellow #fbaa19
+Ko-Fi Black #434b57
+Delta Blue #003366
+Delta Red #c01933
+Odnoklassniki Orange #ee8208
+VKontakte Company Blue #0077ff
+Oreo Blue #124f98
+Oreo Wonderfilled Blue #47c9f3
+Dell Blue #0076ce
+Dell Midnight #00447c
+Dell Light Blue #41b6e6
+Vimeo Blue #1ab7ea
+Vimeo Dark Forest #162221
+Verge Orange #fa4b2a
+Verge Purple #5564be
+Vodafone Red #fe000c
+Trovo Green #32c27c
+Glassdoor Green #0caa41
+Orange Orange #ff6600
+Mastercard Red #eb0001b
+Mastercard Orange #ff5f00
+Mastercard Yellow #f79e1b
+Maestro Red #eb0001b
+Maestro Purple #7375cf
+Maestro Blue #00a2e5
+Cirrus Dark Blue #006656
+Cirrus Blue #007ad0
+Cirrus Light Blue #00a2e5
+Visa Blue #1434cb
+FedEx Purple #660099
+FedEx Orange #ff6600
+FedEx Green #00cc00
+FedEx Blue #0099cc
+FedEx Red #ff0033
+FedEx Yellow #ffcc00
+Renault Yellow #efdf00
+Unibet Green #3eab37
+AMD Red #ed1c24
+Citadel Blue #3975b7
+StackOverflow Orange #f48024
+StackOverflow Blue #0095ff
+StackOverflow Yellow #ffb500
+StackOverflow Teams Purple #2b2d6e
+StackOverflow Advertising Blue #075ec3
+Jack in the box Red #e51837
+Jack in the box Dark Red #b50938
+Jack in the box Purple #4b116f
+Jack in the box Lighter Purple #844cb0
+ESPN Red #ff0033
+baskin robbins Pink #ed4faf
+baskin robbins Blue #0038a8
+Ben & Jerry’s Gold #fdbb13
+Ben & Jerry’s Blue Sky #40b4e5
+Ben & Jerry’s Light Blue Sky #c4e7f3
+Ben & Jerry’s Green Grass #41873f
+Ben & Jerry’s Light Green Grass #82bc00
+GrubHub Chili #f63440
+GrubHub Cream #faf5eb
+GrubHub Cappuchino #ded4ca
+Weezer Blue #0099d3
+Weezer Teal #78d7d2
+Weezer Green #b2d821
+Weezer Red #ed1b36
+Dutch Bright Vermillion #a91f32
+Dutch Cobalt Blue #1e4785
+Hungarian Crimson Red #ce2939
+Hungarian Dark Green #477050
+Nigerian Green #008753
+Non-Binary Yellow #fcf434
+Non-Binary White #fcfcfc
+Non-Binary Purple #9c59d1
+Non-Binary Black #2c2c2c
+Genderqueer Purple #b57edc
+Genderqueer Green #4a8123
+Transgender Blue #5bcecd
+Transgender Pink #f5a9b8
+Bisexual Pink #d00070
+Bisexual Purple #8c4799
+Bisexual Blue #0032a0
+Agender Green #baf484
+Lesbian Red #d62900
+Lesbian Orange #ef7627
+Lesbian Light Orange #ff9b55
+Lesbian Light Pink #d461a6
+Lesbian Purple #b55690
+Lesbian Hot Purple #a50062
+Gay Teal #078d70
+Gay Turquoise #26ceaa
+Gay Light Turquoise #98e8c1
+Gay Sky Blue #7bade2
+Gay Blurple #5049cc
+Gay Dark Purple #3d1a78
+Aroace Dark Yellow #e38d00
+Aroace Yellow #e7c601
+Aroace Blue #5faad7
+Aroace Dark Blue #1f3554
+Boca Christian Yellow #eaaa00
+Boca Christian Green #215732
+AT&T Silver #c9c9c9
+AT&T New Orange Highlight #fcb314
+AT&T Blue Highlight #3aa5dc
+AT&T Dark Blue #0c2577
+AT&T Dark Blue Highlight #026fb3
+AT&T Green #6ebb1f
+AT&T Green Highlight #c4d82d
+AT&T Lime #b6bf00
+AT&T Lime Highlight #dbd810
+AT&T Burgundy #b30a3c
+AT&T Burgundy Highlight #da3872
+AT&T Purple #81017e
+AT&T Purple Highlight #b8509e
+AT&T Dusty Blue #96b1d0
+AT&T Ochre #eaab00
+AT&T Magenta #ff0066
+AT&T Royal Blue #000066
+AT&T Yellow #ffef00
+AT&T Bright Green #00c7b2
+AT&T Warm Gray #cccc99
+AT&T Light Blue #bcc9d6
+AT&T Mint Green #99ffcc
+AT&T Gold #ff9900
+AT&T Taupe #cccc66
+Opera Fig #7c183c
+Opera Pink #fb637e
+Opera Quartz #fabbcb
+Opera Rose #fbf2f4
+Opera Frost #13315c
+Opera Blue #2e54ff
+Opera Sky #8cc8fa
+Opera Ice #e3f5ff
+Opera Pine #14433a
+Opera Green #439f7e
+Opera Lime #bde9c9
+Opera Mint #f1fff2
+Opera Brew #461e0a
+Opera Orange #f6a973
+Opera Apricot #f9e4d3
+Opera Vanilla #fffaf5
+Opera Marine #000032
+Opera Indigo #00249c
+Opera Violet #d6c8fc
+Opera Lavender #f8f1ff
+Opera Root #4e0009
+Opera Red #a70014
+Opera Salmon #ff9a9d
+Opera Coral #ffe0e0
+WalMart Dark Blue #064f8e
+WalMart Dark Pink #b51e6d
+WalMart Dark Yellow #f79428
+WalMart Green #76c043
+WalMart Dark Green #54a546
+WalMart Orange #f47521
+Walmart Dark Orange #e54e26
+Walmart Light Blue #78b9e7
+Walmart Dark Light Blue #1188c8
+Walmart Red #ee3b2a
+Walmart Dark Red #cb2022
+Microsoft Gold #856a1a
+Microsoft Silver #737373
+Starbucks Accent Green #00754a
+Starbucks Light Green #d4e9e2
+Starbucks House Green #1e3932
+VKontakte Company Purple #811ac7
+VKontakte Company Magenta #ff0084
+VKontakte Company Light Blue #00eaff
+VKontakte Company Warm Grey #beb6ae
+VKontakte Company Green #00dc7f
+Duolingo Macaw #1cb0f6
+Duolingo Cardinal #ff4b4b
+Duolingo Bee #ffc800
+Duolingo Fox #ff9600
+Duolingo Beetle #ce82ff
+Duolingo Humpback #2b70c9
+Duolingo Wing Overlay #43c000
+Duolingo Beak Inner #b66e28
+Duolingo Beak Lower/Feet #f49000
+Duolingo Beak Upper #ffc200
+Duolingo Beak Highlight #ffde00
+Duolingo Tongue Pink #ffcaff
+Oreo Pink #e27098
+Oreo Cyan #6bc7c0
+Oreo Yellow #fec669
+Oreo Halloween Orange #f68e50
+Oreo Christmas Green #82ad6c
+Oreo Christmas #da494d
+Oreo Winter Light Blue #dfe9ee
+Oreo Winter Blue #a3c8e2
+Oreo Illustration Yellow #fff45f
+Oreo Illustration Purple #a45498
+Oreo Illustration Orange #f2672d
+Oreo Illustration Pink #f06c94
+Dell Purple #6e2585
+Dell Berry #b7295a
+Dell Orange #ee6411
+Dell Red #ce1126
+Dell Green #6ea204
+Dell Yellow #f2af00
+Audi Progressive Red #f50537
+Audi Signal Green Light #0da20d
+Audi Signal Green Dark #15da15
+Audi Signal Yellow #ffaa00
+Audi Signal Red Light #eb0d3f
+Audi Signal Red Dark #fd2c4e
+Audi Charging Neon Blue Light #2526fe
+Audi Charging Neon Blue Dark #556efe
+Wix Blue #0c6efc
+Wix Yellow #faad4d
+Wix Green #008463
+Wix Red #df3131
+Wix Purple #7f2275
+Wix Blurple #674fe6
+Wix Peach #ff7055
+Trovo Leon #2a9963
+Trovo Jelly #c9ebdc
+Trovo Sapphire #8146f1
+Trovo Mist #c3afef
+Trovo Blue Buff #00a5d5
+Trovo Frost #c3e1f7
+Trovo Red Buff #ff4e7b
+Trovo Sakura #ffd9ec
+Trovo Gem #ffb92e
+Trovo Halo #fae4c8
+Glassdoor Dark Green #007549
+Glassdoor Dark Blue #1d4f90
+Glassdoor Blue #00a1df
+Glassdoor Orange #ff9a02
+Delta Green #94a545
+Delta Orange #ea8a1a
+Delta Yellow #d7c700
+Delta Purple #b090b0
+Delta Light Blue #7799cc
+Delta Dark Blue #002a50
+AMD Overlap Red #b11116
+AMD Purple #812990
+AMD Overlap Purple #4d207a
+AMD Blue #00aab5
+AMD Overlap Blue #007c97
+AMD Green #a6ce39
+AMD Overlap Green #67ae3e
+AMD Orange #f26522
+AMD Overlap Orange #c74a1b
+GrubHub Spinach #2b6b37
+GrubHub Apple #91c949
+GrubHub Lime #d3f94c
+GrubHub Chocolate #5b3530
+GrubHub Pumpkin #f78e21
+GrubHub Banana #ffd863
+GrubHub Fig #8c3c52
+GrubHub Dragonfruit #e86ba5
+GrubHub Rose #ffb5c9
+GrubHub Eggplant #641e8c
+GrubHub Plum #8845da
+GrubHub Lavender #ce9bff
+GrubHub Blueberry #3232aa
+GrubHub Aqua #3fc1dd
+GrubHub Ice #9cf0ff
+Solana SOL Purple #9945ff
+Solana SOL Green #14f195
+Nano XNO Blue #209ce9
+Nano XNO Dark #20204c
+SafeMoon SFM Green #00a79d
+SafeMoon SFM Blue #25223d
+Tether USDT Aqua #009393
+Tether USDT Turquoise #92dbd1
+Tether USDT Gold #d3b25b
+Dash DASH Blue #008de4
+Dash DASH Deep Blue #012060
+Dash DASH Midnight Blue #0b0f3b
+Ripple XRP Blue #008cff
+Litecoin LTC Blue #345d9d

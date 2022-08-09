@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title>Color - Sapero</title>
+        <link rel="stylesheet" href="../assets/style.css">
+        <meta property="og:title"  content="Color - Sapero.ga" />
+        <meta property="og:description"  content="Welcome to Sapero.ga, the website for a cool guy named Shawn" />
+        <meta property="og:type"  content="website" />
+        <meta property="og:url"  content="http://sapero.ga/idiolect" />
+        <meta name="theme-color"  content="#43B581"  data-react-helmet="true" />
+        <meta property="og:image"  content="http://sapero.ga/assets/icosa.png"  />
+        <link rel="icon" sizes="164x164" href="http://sapero.ga/assets/icosa.png">
+        <link rel="shortcut icon" href="http://sapero.ga/assets/icosa.png">
+        <style>
+            p
+            {
+                padding:0px;
+                margin:0px;
+                font-size:200%;
+                color: white;
+            }
+        </style>
+	</head>
+
+<body style="background-color: black">
