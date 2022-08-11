@@ -15,12 +15,12 @@ def isLight(h):
         return False
 
 
-s = open('ss.txt', 'w')
+s = open('tests/ss.txt', 'w')
 s.write('')
 s.close()
-s = open('ss.txt', 'a')
+s = open('tests/ss.txt', 'a')
 
-f = open('color.txt')
+f = open('src_files/color.txt')
 sl = f.read().splitlines()
 f.close()
 
@@ -40,16 +40,16 @@ s.close()
 
 
 
-n = open('ns.txt', 'w')
+n = open('tests/ns.txt', 'w')
 n.write('')
 n.close()
-n = open('ns.txt', 'a')
+n = open('tests/ns.txt', 'a')
 
-f = open('color.txt')
+f = open('src_files/color.txt')
 nl = f.read().splitlines()
 f.close()
 
-nl.sort()
+nl = sorted(nl, key=str.casefold)
 
 for k in nl:
     n.write(k + "\n")
@@ -59,19 +59,19 @@ n.close()
 
 
 
-b = open('base.txt')
+b = open('src_files/base.txt')
 bl = b.read().splitlines()
 b.close()
 
 
 
 
-r = open('color.html', 'w')
+r = open('tests/color.html', 'w')
 r.write('')
 r.close()
-r = open('color.html', 'a')
+r = open('tests/color.html', 'a')
 
-f = open('color.txt')
+f = open('src_files/color.txt')
 rl = f.read().splitlines()
 f.close()
 
@@ -91,12 +91,12 @@ r.close()
 
 
 
-r = open('colorhex.html', 'w')
+r = open('tests/colorhex.html', 'w')
 r.write('')
 r.close()
-r = open('colorhex.html', 'a')
+r = open('tests/colorhex.html', 'a')
 
-f = open('ss.txt')
+f = open('tests/ss.txt')
 ssl = f.read().splitlines()
 f.close()
 
@@ -117,12 +117,12 @@ r.close()
 
 
 
-r = open('colorname.html', 'w')
+r = open('tests/colorname.html', 'w')
 r.write('')
 r.close()
-r = open('colorname.html', 'a')
+r = open('tests/colorname.html', 'a')
 
-f = open('ns.txt')
+f = open('tests/ns.txt')
 nsl = f.read().splitlines()
 f.close()
 

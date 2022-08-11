@@ -4,8 +4,6 @@ tests/
 *.png
 !src_files/**/**
 !python/wordle/wordlists.txt
-!python/sapero_ga_col_color/base.txt
-!python/sapero_ga_col_color/color.txt
 python/page.json
 python/page.html
 python/page.xml

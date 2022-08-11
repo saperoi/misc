@@ -1,3 +1,5 @@
+_Black #000000
+_White #ffffff
 NASA Red #fc3d21
 NASA Blue #0b3d91
 EPA Blue #336699
@@ -100,10 +102,10 @@ Vodafone Red #fe000c
 Trovo Green #32c27c
 Glassdoor Green #0caa41
 Orange Orange #ff6600
-Mastercard Red #eb0001b
+Mastercard Red # #b0001b
 Mastercard Orange #ff5f00
 Mastercard Yellow #f79e1b
-Maestro Red #eb0001b
+Maestro Red # #b0001b
 Maestro Purple #7375cf
 Maestro Blue #00a2e5
 Cirrus Dark Blue #006656
@@ -137,9 +139,17 @@ Ben & Jerry’s Blue Sky #40b4e5
 Ben & Jerry’s Light Blue Sky #c4e7f3
 Ben & Jerry’s Green Grass #41873f
 Ben & Jerry’s Light Green Grass #82bc00
+BMW Blue #1c69d4
+Subway Green #028940
+Subway Yellow #ffc20d
+Kahoot Purple #46178f
+Nestle Oak #64513d
+Nestle Dark Oak #30261d
 GrubHub Chili #f63440
 GrubHub Cream #faf5eb
 GrubHub Cappuchino #ded4ca
+Dunkin' Pink #f20c90
+Dunkin' Orange #ff6d0d
 Weezer Blue #0099d3
 Weezer Teal #78d7d2
 Weezer Green #b2d821
@@ -337,6 +347,12 @@ GrubHub Lavender #ce9bff
 GrubHub Blueberry #3232aa
 GrubHub Aqua #3fc1dd
 GrubHub Ice #9cf0ff
+Subway Water Blue #00a7e9
+Subway Lettuce Green #8bcd32
+Subway Spinach Green #006230
+Subway Onion Purple #4c006a
+Subway Carrot Orange #ff8200
+Subway Tomato Red #de3804
 Solana SOL Purple #9945ff
 Solana SOL Green #14f195
 Nano XNO Blue #209ce9
@@ -351,3 +367,41 @@ Dash DASH Deep Blue #012060
 Dash DASH Midnight Blue #0b0f3b
 Ripple XRP Blue #008cff
 Litecoin LTC Blue #345d9d
+Algorand ALGO Teal #006883
+Algorand ALGO Arctic Lime #dcfe54
+Algorand ALGO Med Aquamarine #01dc94
+Algorand ALGO Sky Teal #31d8ee
+Algorand ALGO Coal #201f21
+Algorand ALGO Orange Coral #ff684e
+Algorand ALGO Plum #f7aef8
+Chainlink LINK Blue #375bd2
+Chainlink LINK Mirage #0c162c
+Chainlink LINK Biscay #1a2b6b
+Chainlink LINK Perano #a0b3f2
+Chainlink LINK Lavender #dfe7fb
+Chainlink LINK Zircon #f5f7fd
+Chainlink LINK Red #ff5e57
+Chainlink LINK Yellow #ffdd59
+Chainlink LINK Green #05c46b
+Tezos XTZ Blue #0f61ff
+Tezos XTZ Stealth #1d2227
+Tezos XTZ Steel #838893
+Tezos XTZ Slate #616f82
+Tezos XTZ Purple #9f329f
+Lisk LSK Zodiac Blue #0c152e
+Lisk LSK Ultramarine Blue #4070f4
+Lisk LSK Ink Blue #254898
+Lisk LSK UFO Green #2bd67b
+Lisk LSK Yellow Copacabana #f7e36d
+Lisk LSK Cosmos Pink #ffd0d1
+Lisk LSK Fury Red #ff4557
+chia CHIA Green #3aac59
+USD Coin USDC Stable Blue #2775ca
+neo NEO Green #00e599
+neo NEO Dark Green #00af92
+Decred DCR Blue #2971ff
+Decred DCR Turquoise #2ed8a3
+Decred DCR Key Blue #0c1e3e
+Decred DCR Light Blue #69d3f5
+Decred DCR Green #41bf53
+Decred DCR Orange #fd714a
