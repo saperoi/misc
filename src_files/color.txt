@@ -150,6 +150,19 @@ GrubHub Cream #faf5eb
 GrubHub Cappuchino #ded4ca
 Dunkin' Pink #f20c90
 Dunkin' Orange #ff6d0d
+Oracle Red #c74634
+Oracle Bark #312d2a
+avast Bright Orange #ff7800
+avast Faint Orange #ffddbf
+avast Dark Dark Blue #04121a
+AVG Green #00b451
+AVG Status Green #44cc88
+AVG Blue #2a7de1
+AVG Status Blue #33aaee
+AVG Red #ea0029
+AVG Status Red #ee4466
+AVG Yellow #ffb600
+AVG Status Yellow #ffb910
 Weezer Blue #0099d3
 Weezer Teal #78d7d2
 Weezer Green #b2d821
@@ -353,6 +366,38 @@ Subway Spinach Green #006230
 Subway Onion Purple #4c006a
 Subway Carrot Orange #ff8200
 Subway Tomato Red #de3804
+avast Faint Blue #e5fdff
+avast Pale Blue #c1f3f7
+avast Light Blue #58dfed
+avast Bright Blue #4096ff
+avast Mid Blue #0070f6
+avast Deep Blue #0f4062
+avast Dark Blue #071d28
+avast Faint Green #f7ffe5
+avast Pale Green #e5f7c1
+avast Light Green #bbed58
+avast Bright Green #9ae437
+avast Mid Green #388700
+avast Deep Green #314d00
+avast Dark Green #141f00
+avast Faint Yellow #fffbe9
+avast Pale Yellow #fff8cc
+avast Light Yellow #fffb73
+avast Bright Yellow #ffd900
+avast Mid Yellow #ffbf00
+avast Deep Yellow #967100
+avast Dark Yellow #272100
+avast Off-White Orange #fffcfa
+avast Faint Orange #ffddbf
+avast Pale Orange #ffbb80
+avast Light Orange #ff9d00
+avast Mid Orange #b15300
+avast Deep Orange #622e00
+avast Dark Orange #36342e
+avast Light Red #ff9780
+avast Bright Red #ff5833
+avast Mid Red #d93511
+avast Deep Red #8e230b
 Solana SOL Purple #9945ff
 Solana SOL Green #14f195
 Nano XNO Blue #209ce9
@@ -405,3 +450,11 @@ Decred DCR Key Blue #0c1e3e
 Decred DCR Light Blue #69d3f5
 Decred DCR Green #41bf53
 Decred DCR Orange #fd714a
+Ontology ONT Blue #48a3ff
+Ontology ONT Light Blue #78cdeb
+Ontology ONT Dark Blue #051432
+Cosmos ATOM Primary #5064fb
+Cosmos ATOM Secondary #66a1ff
+Cosmos ATOM Tertiary #ba3fd9
+Cosmos ATOM Hover #46509f
+Merge MERGE Blue Green #17B175
