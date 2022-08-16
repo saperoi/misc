@@ -1,5 +1,14 @@
 _Black #000000
 _White #ffffff
+NS Yellow #ffc917
+NS Blue #003082
+NS Light Blue #0063d3
+NS Red #db0029
+NS Green #009a42
+NS OV-Chip #ff0098
+NS Orange #ff7700
+NS Light Blue 2 #005ca0
+NS Light Yellow 2 #ffb519
 NASA Red #fc3d21
 NASA Blue #0b3d91
 EPA Blue #336699
@@ -102,10 +111,10 @@ Vodafone Red #fe000c
 Trovo Green #32c27c
 Glassdoor Green #0caa41
 Orange Orange #ff6600
-Mastercard Red # #b0001b
+Mastercard Red #b0001b
 Mastercard Orange #ff5f00
 Mastercard Yellow #f79e1b
-Maestro Red # #b0001b
+Maestro Red #b0001b
 Maestro Purple #7375cf
 Maestro Blue #00a2e5
 Cirrus Dark Blue #006656
@@ -163,6 +172,12 @@ AVG Red #ea0029
 AVG Status Red #ee4466
 AVG Yellow #ffb600
 AVG Status Yellow #ffb910
+NordVPN Blue #4687ff
+NordVPN Dark Blue #0e1b33
+NordVPN Red #f64f64
+NordVPN Orange #ff7e23
+NordVPN Purple #7f7aee
+NordVPN Green #27be56
 Weezer Blue #0099d3
 Weezer Teal #78d7d2
 Weezer Green #b2d821
@@ -458,3 +473,6 @@ Cosmos ATOM Secondary #66a1ff
 Cosmos ATOM Tertiary #ba3fd9
 Cosmos ATOM Hover #46509f
 Merge MERGE Blue Green #17B175
+Crypto.com Admiral #002d74
+Crypto.com Anchor #9ea1a2
+Crypto.com Lagoon #129dff
