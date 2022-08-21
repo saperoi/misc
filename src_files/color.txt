@@ -178,6 +178,24 @@ NordVPN Red #f64f64
 NordVPN Orange #ff7e23
 NordVPN Purple #7f7aee
 NordVPN Green #27be56
+Alipay Dark Blue #1677ff
+Alipay Light Blue #00b6ff
+Klarna Pink #ffb3c7
+Yamaha Red #ee2e24
+Yamaha Racing Blue #0a2d82
+Costco Red #c8102e
+Costco Blue #0032a0
+LG Red #a50043
+LG Dark Red #6e1e39
+LG Dark Gray #373a36
+HEINEKEN Green #008200
+HEINEKEN Corporate Green #205527
+HEINEKEN Red #ff2b00
+Kia Midnight Black #05141f
+Kia Live Red #ea0029
+Kia Afternoon Yellow #f3c300
+Kia Forest Green #5d7d2b
+Kia City Gray #9ea1a2
 Weezer Blue #0099d3
 Weezer Teal #78d7d2
 Weezer Green #b2d821
@@ -413,6 +431,19 @@ avast Light Red #ff9780
 avast Bright Red #ff5833
 avast Mid Red #d93511
 avast Deep Red #8e230b
+Klarna Almond #f1ded0
+Klarna Opal #d3dedc
+Klarna Lilac #d7bbd4
+Klarna Pigeon #a2b2d2
+Klarna Ming #487b94
+Costco Action Blue #3071a9
+Costco Warning Red #9b0f24
+Costco Success Green #0f9b2e
+HEINEKEN Light Green #7ab800
+HEINEKEN Golden Yellow #fecb00
+HEINEKEN Orange #ff7900
+HEINEKEN Aqua Blue #2a6ebb
+HEINEKEN Ultraviolet #8e258d
 Solana SOL Purple #9945ff
 Solana SOL Green #14f195
 Nano XNO Blue #209ce9
