@@ -73,6 +73,15 @@ Yelp Red #c41200
 Yelp 5-star Red #e60512
 Tesla Red #e31937
 Nintendo 3DS Red #ce181e
+LINE Green #06c755
+LINE Green Android #4cc764
+airbnb Rausch #ff5a5f
+airbnb A11y Babu #00a699
+airbnb A11y Arches #fc642d
+Unity Web Blue #2196f3
+Twitch Purple #6441a5
+Twitch New Purple #9146ff
+DLive Yellow #ffd300
 Wattpad Hero Orange #ff500A
 Webtoon Green #00dc64
 Duolingo Feather Green #58cc02
@@ -172,6 +181,8 @@ AVG Red #ea0029
 AVG Status Red #ee4466
 AVG Yellow #ffb600
 AVG Status Yellow #ffb910
+Boca Christian Yellow #eaaa00
+Boca Christian Green #215732
 NordVPN Blue #4687ff
 NordVPN Dark Blue #0e1b33
 NordVPN Red #f64f64
@@ -196,15 +207,14 @@ Kia Live Red #ea0029
 Kia Afternoon Yellow #f3c300
 Kia Forest Green #5d7d2b
 Kia City Gray #9ea1a2
+Alfa Romeo Red #a40e2d
+Alfa Romeo Green #004d36
+Alfa Romeo Black #000d22
+Škoda Green #006535
 Weezer Blue #0099d3
 Weezer Teal #78d7d2
 Weezer Green #b2d821
 Weezer Red #ed1b36
-Dutch Bright Vermillion #a91f32
-Dutch Cobalt Blue #1e4785
-Hungarian Crimson Red #ce2939
-Hungarian Dark Green #477050
-Nigerian Green #008753
 Non-Binary Yellow #fcf434
 Non-Binary White #fcfcfc
 Non-Binary Purple #9c59d1
@@ -233,8 +243,25 @@ Aroace Dark Yellow #e38d00
 Aroace Yellow #e7c601
 Aroace Blue #5faad7
 Aroace Dark Blue #1f3554
-Boca Christian Yellow #eaaa00
-Boca Christian Green #215732
+Dutch Bright Vermillion #a91f32
+Dutch Cobalt Blue #1e4785
+Hungarian Crimson Red #ce2939
+Hungarian Dark Green #477050
+Nigerian Green #008753
+City of Philedelphia Dark Ben Franklin Blue #0f4d90
+City of Philedelphia Ben Franklin Blue #2176d2
+City of Philedelphia Light Ben Franklin #96c9ff
+City of Philedelphia Electric Blue #25cef7
+City of Philedelphia Bell Yellow #f3c613
+City of Philedelphia Flyers Orange #f99300
+City of Philedelphia Kelly Drive Green #58c04d
+City of Philedelphia Light Bell #ffefa2
+City of Philedelphia Light Red #fed0d0
+City of Philedelphia Light Kelly Drive #b9f2b1
+City of Philedelphia Light Blue#daedfe
+City of Philedelphia Phanatic Green #3a833c
+City of Philedelphia Love Park Red #cc3000
+City of Philedelphia Pride Purple #9400c6
 AT&T Silver #c9c9c9
 AT&T New Orange Highlight #fcb314
 AT&T Blue Highlight #3aa5dc
@@ -421,7 +448,6 @@ avast Mid Yellow #ffbf00
 avast Deep Yellow #967100
 avast Dark Yellow #272100
 avast Off-White Orange #fffcfa
-avast Faint Orange #ffddbf
 avast Pale Orange #ffbb80
 avast Light Orange #ff9d00
 avast Mid Orange #b15300
@@ -444,6 +470,30 @@ HEINEKEN Golden Yellow #fecb00
 HEINEKEN Orange #ff7900
 HEINEKEN Aqua Blue #2a6ebb
 HEINEKEN Ultraviolet #8e258d
+Twitch Ice #f0f0ff
+Twitch Smoke #d2d2e6
+Twitch Jiggle #fab4ff
+Twitch Widow #bfabff
+Twitch Worm #facdc8
+Twitch Peach #fc6675
+Twitch Isabelle #feee85
+Twitch Pac #ffca5f
+Twitch Droid #befae1
+Twitch Mudkip #57bee6
+Twitch Wipe Out #00c8af
+Twitch Sonic #0014a5
+Twitch Dragon #8205b4
+Twitch Nights #41145f
+Twitch Cuddle #fa1ed2
+Twitch Osu #be0078
+Twitch Sandit #ff6905
+Twitch Red Alert #be0078
+Twitch Lightning #fafa19
+Twitch Egg #00fa05
+Twitch K.O. #beff00
+Twitch Legend #69ffc3
+Twitch Mega #00fafa
+Twitch Zero #1e69ff
 Solana SOL Purple #9945ff
 Solana SOL Green #14f195
 Nano XNO Blue #209ce9
