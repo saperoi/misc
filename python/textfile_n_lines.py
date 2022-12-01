@@ -1,10 +1,10 @@
 import math
 
-yf = open("src_files/yt.txt", "r")
+yf = open("yt.txt", "r")
 y = yf.readlines()
 yf.close()
 sect = 5
-n = n = int(len(y)/sect)
+n = int((len(y)+1)/sect)
 
 
 def topic(s):
@@ -36,6 +36,14 @@ def topic(s):
         a.append("pol")
     if "Archaeology" in s:
         a.append("archeo")
+    if "Economy" in s:
+        a.append("econ")
+    if "Religion" in s:
+        a.append("rel")
+    if "Transport" in s:
+        a.append("trans")
+    if "Philosophy" in s:
+        a.append("philo")
     for t in a:
         r += "<img class='top' src='assets/yt/" + t +"'/>"
     r += "</td>\n"
@@ -60,27 +68,27 @@ for i in range(n):
     pfps.append(y[sect*i+2])
     tops.append(y[sect*i+3])
 
-f = open("tests/yt.txt", "w")
+f = open("r.txt", "w")
 f.write('')
 f.close()
-f = open("tests/yt.txt", "a")
+f = open("r.txt", "a")
 
 rep = math.floor(n/5)
 bon = n%5
 
 for k in range(rep):
     f.write('<table class="tbcl">\n<tr style="border-top: solid 1px;">\n')
-    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k] + '"/></td>\n')
-    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+1] + '"/></td>\n')
-    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+2] + '"/></td>\n')
-    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+3] + '"/></td>\n')
-    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+4] + '"/></td>\n')
+    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k].replace("\n","") + '"/></td>\n')
+    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+1].replace("\n","") + '"/></td>\n')
+    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+2].replace("\n","") + '"/></td>\n')
+    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+3].replace("\n","") + '"/></td>\n')
+    f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*k+4].replace("\n","") + '"/></td>\n')
     f.write('</tr>\n<tr>\n')
-    f.write('<td class="td1px"><a href="' + urls[5*k] + '">' + names[5*k] + '</a></td>\n')
-    f.write('<td class="td1px"><a href="' + urls[5*k+1] + '">' + names[5*k+1] + '</a></td>\n')
-    f.write('<td class="td1px"><a href="' + urls[5*k+2] + '">' + names[5*k+2] + '</a></td>\n')
-    f.write('<td class="td1px"><a href="' + urls[5*k+3] + '">' + names[5*k+3] + '</a></td>\n')
-    f.write('<td class="td1px"><a href="' + urls[5*k+4] + '">' + names[5*k+4] + '</a></td>\n')
+    f.write('<td class="td1px"><a href="' + urls[5*k].replace("\n","") + '">' + names[5*k].replace("\n","") + '</a></td>\n')
+    f.write('<td class="td1px"><a href="' + urls[5*k+1].replace("\n","") + '">' + names[5*k+1].replace("\n","") + '</a></td>\n')
+    f.write('<td class="td1px"><a href="' + urls[5*k+2].replace("\n","") + '">' + names[5*k+2].replace("\n","") + '</a></td>\n')
+    f.write('<td class="td1px"><a href="' + urls[5*k+3].replace("\n","") + '">' + names[5*k+3].replace("\n","") + '</a></td>\n')
+    f.write('<td class="td1px"><a href="' + urls[5*k+4].replace("\n","") + '">' + names[5*k+4].replace("\n","") + '</a></td>\n')
     f.write('</tr>\n<tr style="border-bottom: solid 1px;">\n')
     f.write(topic(tops[5*k]))
     f.write(topic(tops[5*k+1]))
@@ -90,13 +98,13 @@ for k in range(rep):
     f.write('</tr>\n</table>\n')
 
 if bon != 0:
+    k+=1
     f.write('<table class="tbcl">\n<tr style="border-top: solid 1px;">\n')
     for j in range(bon):
-        f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*rep + j] + '"/></td>\n')
+        f.write('<td class="td1px"><img class="pfp" src="' + pfps[5*rep + j].replace("\n","") + '"/></td>\n')
     f.write('</tr>\n<tr>\n')
     for j in range(bon):
-        f.write('<td class="td1px"><a href="' + urls[5*rep + j] + '">' + names[5*k + j] + '</a></td>\n')
-
+        f.write('<td class="td1px"><a href="' + urls[5*rep + j].replace("\n","") + '">' + names[5*k + j] + '</a></td>\n')
     f.write('</tr>\n<tr style="border-bottom: solid 1px;">\n')
     for j in range(bon):
         f.write(topic(tops[5*k + j]))
