@@ -15,12 +15,9 @@ for i in range(len(plain)):
         cyp += plain[i]
         continue
     shift = math.ceil((n+1)/2)
-    print(shift)
     if n%2 == 0: #right!
-        print(alphabet[(letterIndex + shift)%26])
         cyp += alphabet[(letterIndex + shift)%26]
     elif n%2 == 1: #left!
-        print(alphabet[(letterIndex - shift)%26])
         cyp += alphabet[(letterIndex - shift)%26]
     n += 1
 
