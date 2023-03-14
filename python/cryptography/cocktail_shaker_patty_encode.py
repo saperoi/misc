@@ -10,15 +10,19 @@ cyp = ""
 n = 0
 for i in range(len(plain)):
     try:
-        letterIndex = alphabet.index(plain[i])
+        letterIndex = alphabet.index(plain[i].lower())
     except:
         cyp += plain[i]
         continue
     shift = math.ceil((n+1)/2)
     if n%2 == 0: #right!
-        cyp += alphabet[(letterIndex + shift)%26]
+        char = alphabet[(letterIndex + shift)%26]
     elif n%2 == 1: #left!
-        cyp += alphabet[(letterIndex - shift)%26]
+        char = alphabet[(letterIndex - shift)%26]
+    if plain[i].lower() != plain[i]:
+        cyp += char.upper()
+    else:
+        cyp += char
     n += 1
 
 print(cyp)
