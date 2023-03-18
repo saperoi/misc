@@ -1,3 +1,5 @@
+#not actual code, just a model idea
+
 class Sekse:
     class gender:
         class low:
@@ -38,14 +40,14 @@ class Sekse:
         (self.orientation.masc, self.orientation.fem, self.orientation.andro, self.orientation.xenic) = orient
         self.romantic.self = rom
         (self.romantic.masc, self.romantic.fem, self.romantic.andro, self.romantic.xenic) = rom
-        
+
 
     def __str__(self):
         return f'Sekse({self.gender.self})'
 
     def __repr__(self):
         return f"Sekse(Gender = {self.gender.low.self} ~ {self.gender.upp.self}, Sexuality = {self.orientation.self}, Romantic Orientation = {self.romantic.self})"
-    
+
     def sexual(a: "Sekse", b: "Sekse"):
         mascatt = False
         fematt = False
@@ -65,7 +67,7 @@ class Sekse:
         else:
             print(a.name + " is NOT sexually attracted to " + b.name)
             return False
-    
+
     def romance(a: "Sekse", b: "Sekse"):
         mascatt = False
         fematt = False
