@@ -41,18 +41,18 @@
 
 /* If you use light theme, you can give it unique settings that are separate from dark theme. */
 .theme-light {
-  --dplus-backdrop: url(https://sapero.neocities.org/assets/background.png);
+  --dplus-backdrop: url(https://media.discordapp.net/attachments/947140096585531392/1089138684651114546/image.png);
 
-  --dplus-accent-color-hue: 320;
-  --dplus-accent-color-saturation: 60%;
-  --dplus-accent-color-lightness: 31%;
+  --dplus-accent-color-hue: 200;
+  --dplus-accent-color-saturation: 30.6%;
+  --dplus-accent-color-lightness: 90.4%;
 
   --dplus-foreground-color-hue-base: 210;
   --dplus-foreground-color-hue-links: 197;
   --dplus-foreground-color-saturation-amount: 1;
   --dplus-foreground-color-lightness-amount: 1;
 
-  --dplus-background-color-hue: 320;
+  --dplus-background-color-hue: 210;
   --dplus-background-color-saturation-amount: 1;
   --dplus-background-color-lightness-amount: 1;
   --dplus-background-color-alpha: 0.8;
