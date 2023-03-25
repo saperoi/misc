@@ -29,13 +29,13 @@
 /* Foreground color: For things like text and icons. */
   --dplus-foreground-color-hue-base: 207;
   --dplus-foreground-color-hue-links: 293;
-  --dplus-foreground-color-saturation-amount: 91.7;
-  --dplus-foreground-color-lightness-amount: 76.5;
+  --dplus-foreground-color-saturation-amount: 1;
+  --dplus-foreground-color-lightness-amount: 1;
 
 /* Background color: Covers the backdrop so the app is easier to read. */
   --dplus-background-color-hue: 210;
-  --dplus-background-color-saturation-amount: 33.3;
-  --dplus-background-color-lightness-amount: 11.8;
+  --dplus-background-color-saturation-amount: 1;
+  --dplus-background-color-lightness-amount: 1;
   --dplus-background-color-alpha: 0.8;
 }
 
