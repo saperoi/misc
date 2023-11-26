@@ -14,11 +14,11 @@
 }
 
 .sidebar_ded4b5::before{
-    content:"CHUMIAN 0.1";
+    content:"PESTERTROLL 0.1";
 }
 
 .wordmark__0d178::before{
-    content:"CHUMIAN";
+    content:"PESTERTROLL";
 }
 
 *:not([class*="hljs"]):not(code){
@@ -31,3 +31,4 @@
 .markup:not(code) {
   font-size: var(--Font-Size)!important;
 }
+	
