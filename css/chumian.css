@@ -1,0 +1,33 @@
+@import url(https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Fonts/Yes.css);
+@import url('https://minidiscordthemes.github.io/Pesterchum/chum.min.css');
+
+:root {
+    --chum-dark: #3980BB;
+    --chum-medium: #00b9b9;
+    --chum-light: #02FDBB;
+    --chum-sidebar-width: 300px;
+  --Font-Used: "Fira Mono", monospace;
+  --Font-Size: 15px ;
+  --Font-Style: normal ;
+  --Font-Weight: 200 ;
+  --Font-Variant: normal ;
+}
+
+.sidebar_ded4b5::before{
+    content:"CHUMIAN 0.1";
+}
+
+.wordmark__0d178::before{
+    content:"CHUMIAN";
+}
+
+*:not([class*="hljs"]):not(code){
+  font-family: var(--Font-Used)!important;
+  font-style: var(--Font-Style)!important;
+  font-weight:  var(--Font-Weight)!important;
+  font-variant: var(--Font-Variant)!important;
+}
+
+.markup:not(code) {
+  font-size: var(--Font-Size)!important;
+}
