@@ -1,6 +1,6 @@
 @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
 
-@import url(https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Fonts/Yes.css);
+@import url("https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Fonts/Yes.css");
 
 *{
   font-family: "Fira Mono", monospace !important;
