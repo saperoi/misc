@@ -1,43 +1,7 @@
-/* latte */
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-latte.theme.css"); */
-
-/* frappe */
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-frappe.theme.css"); */
-
-/* macchiato */
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css"); */
-
-/* mocha */
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"); */
-
-/* You can also append Catppuccin colors to customize the accent, e.g. */
-/* mocha (pink accent)*/
- @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
-
-/* frappe (maroon accent) */
-/* @import url("https://catppuccin.github.io/discord/dist/catppuccin-frappe-maroon.theme.css") */
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css");
 
 @import url(https://nfld99.github.io/Better-Discord/Source_Code/Addons/Use_Fonts/Yes.css);
-:root {
-  --Font-Used: "Fira Mono", monospace;
-  /* https://nfld99.github.io/Better-Discord/Font_List.txt */
-  --Font-Size: 15px ;
-  /* mediumxx-smallx-smallsmalllargex-largexx-largesmallerlargerlengthinitialinherit */
-  --Font-Style: normal ;
-  /* normalitalicobliqueinitialinherit */
-  --Font-Weight: 200 ;
-  /* normalboldbolderlighternumberinitialinherit */
-  --Font-Variant: normal ;
-  /* normalsmall-capsinitialinherit */
-}
 
-*:not([class*="hljs"]):not(code){
-  font-family: var(--Font-Used)!important;
-  font-style: var(--Font-Style)!important;
-  font-weight:  var(--Font-Weight)!important;
-  font-variant: var(--Font-Variant)!important;
-}
-
-.markup:not(code) {
-  font-size: var(--Font-Size)!important;
+*{
+  font-family: "Fira Mono", monospace !important;
 }
